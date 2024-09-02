@@ -1,5 +1,6 @@
 (uiop:define-package #:40ants-lake/commands/help
-  (:use #:cl))
+  (:use #:cl)
+  (:import-from #:lake))
 (in-package #:40ants-lake/commands/help)
 
 

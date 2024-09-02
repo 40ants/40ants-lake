@@ -1,5 +1,6 @@
 (uiop:define-package #:40ants-lake/utils
   (:use #:cl)
+  (:import-from #:lake)
   (:export #:alias))
 (in-package #:40ants-lake/utils)
 
