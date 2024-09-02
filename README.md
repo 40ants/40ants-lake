@@ -45,7 +45,7 @@ You can install this library from Quicklisp, but you want to receive updates qui
 
 <a id="x-28-23A-28-2811-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-22-29-20PACKAGE-29"></a>
 
-#### [package](f3fc) `40ants-lake`
+#### [package](9d08) `40ants-lake`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -57,7 +57,7 @@ You can install this library from Quicklisp, but you want to receive updates qui
 
 <a id="x-2840ANTS-LAKE-3AHELLO-20CLASS-29"></a>
 
-###### [class](d74e) `40ants-lake:hello` ()
+###### [class](1a67) `40ants-lake:hello` ()
 
 Example class.
 
@@ -65,7 +65,7 @@ Example class.
 
 <a id="x-2840ANTS-LAKE-3AUSER-NAME-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-3AHELLO-29-29"></a>
 
-###### [reader](f1fc) `40ants-lake:user-name` (hello) (:name)
+###### [reader](76bb) `40ants-lake:user-name` (hello) (:name)
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-3FGenerics-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -73,7 +73,7 @@ Example class.
 
 <a id="x-2840ANTS-LAKE-3ASAY-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](df24) `40ants-lake:say` obj
+##### [generic-function](a2b9) `40ants-lake:say` obj
 
 Say what should be said.
 
@@ -83,7 +83,7 @@ Say what should be said.
 
 <a id="x-2840ANTS-LAKE-3AMAKE-HELLO-20FUNCTION-29"></a>
 
-##### [function](ce2f) `40ants-lake:make-hello` name
+##### [function](957a) `40ants-lake:make-hello` name
 
 Makes hello world example
 
@@ -93,7 +93,7 @@ Makes hello world example
 
 <a id="x-28-23A-28-2817-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FUTILS-22-29-20PACKAGE-29"></a>
 
-#### [package](3421) `40ants-lake/utils`
+#### [package](70f2) `40ants-lake/utils`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FUTILS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -101,19 +101,19 @@ Makes hello world example
 
 <a id="x-2840ANTS-LAKE-2FUTILS-3AALIAS-20FUNCTION-29"></a>
 
-##### [function](dd6c) `40ants-lake/utils:alias` alias-name existing-task-name
+##### [function](d5bb) `40ants-lake/utils:alias` alias-name existing-task-name
 
 
 [5e55]: https://40ants.com/40ants-lake/
 [4665]: https://github.com/40ants/40ants-lake
 [822c]: https://github.com/40ants/40ants-lake/actions
-[f3fc]: https://github.com/40ants/40ants-lake/blob/7da295c78b4bd9379b4bdfc43d3f6b5c71177442/src/core.lisp#L1
-[d74e]: https://github.com/40ants/40ants-lake/blob/7da295c78b4bd9379b4bdfc43d3f6b5c71177442/src/core.lisp#L11
-[f1fc]: https://github.com/40ants/40ants-lake/blob/7da295c78b4bd9379b4bdfc43d3f6b5c71177442/src/core.lisp#L12
-[ce2f]: https://github.com/40ants/40ants-lake/blob/7da295c78b4bd9379b4bdfc43d3f6b5c71177442/src/core.lisp#L17
-[df24]: https://github.com/40ants/40ants-lake/blob/7da295c78b4bd9379b4bdfc43d3f6b5c71177442/src/core.lisp#L23
-[3421]: https://github.com/40ants/40ants-lake/blob/7da295c78b4bd9379b4bdfc43d3f6b5c71177442/src/utils.lisp#L1
-[dd6c]: https://github.com/40ants/40ants-lake/blob/7da295c78b4bd9379b4bdfc43d3f6b5c71177442/src/utils.lisp#L12
+[9d08]: https://github.com/40ants/40ants-lake/blob/af7d68f467f53b355db62190d50658aa55d1fea1/src/core.lisp#L1
+[1a67]: https://github.com/40ants/40ants-lake/blob/af7d68f467f53b355db62190d50658aa55d1fea1/src/core.lisp#L11
+[76bb]: https://github.com/40ants/40ants-lake/blob/af7d68f467f53b355db62190d50658aa55d1fea1/src/core.lisp#L12
+[957a]: https://github.com/40ants/40ants-lake/blob/af7d68f467f53b355db62190d50658aa55d1fea1/src/core.lisp#L17
+[a2b9]: https://github.com/40ants/40ants-lake/blob/af7d68f467f53b355db62190d50658aa55d1fea1/src/core.lisp#L23
+[70f2]: https://github.com/40ants/40ants-lake/blob/af7d68f467f53b355db62190d50658aa55d1fea1/src/utils.lisp#L1
+[d5bb]: https://github.com/40ants/40ants-lake/blob/af7d68f467f53b355db62190d50658aa55d1fea1/src/utils.lisp#L12
 [43ae]: https://github.com/40ants/40ants-lake/issues
 [4339]: https://quickdocs.org/lake
 
