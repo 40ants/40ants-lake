@@ -11,8 +11,13 @@
   :pathname "src"
   :depends-on ("40ants-lake/core"
                "40ants-lake/commands/install"
+               "40ants-lake/commands/build"
+               "40ants-lake/commands/dbshell"
                "40ants-lake/commands/help"
+               "40ants-lake/app"
+               "40ants-lake/task"
                "40ants-lake/utils"
+               "40ants-lake/component/webservice"
                ;; I have to find a way to load lparallel before lake
                ;; otherwise it breaks when lake's fasl files are loaded before lparallel.
                ;; 
@@ -20,3 +25,6 @@
                ;; "lparallel"
                )
   :in-order-to ((test-op (test-op "40ants-lake-tests"))))
+
+
+(asdf:register-system-packages "cl-mustache" '("MUSTACHE"))
