@@ -14,10 +14,16 @@
                "40ants-lake/commands/build"
                "40ants-lake/commands/dbshell"
                "40ants-lake/commands/help"
+               "40ants-lake/commands/to-prod"
+               "40ants-lake/commands/start"
+               "40ants-lake/commands/stop"
+               "40ants-lake/commands/restart"
+               "40ants-lake/commands/default"
                "40ants-lake/app"
                "40ants-lake/task"
                "40ants-lake/utils"
                "40ants-lake/component/webservice"
+               "40ants-lake/component/daemon"
                ;; I have to find a way to load lparallel before lake
                ;; otherwise it breaks when lake's fasl files are loaded before lparallel.
                ;; 

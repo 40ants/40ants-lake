@@ -59,8 +59,23 @@
                    (subseq path (1- (length prefix)))))
 
 
+(defun probe-file-as-root (pathname-or-string)
+  (let ((exit-code
+          (nth-value
+           2
+           (uiop:run-program (list "sudo"
+                                   "ls"
+                                   (namestring pathname-or-string))
+                             :ignore-error-status t))))
+    (when (zerop exit-code)
+      pathname-or-string)))
+
 
 (defun namestring-if-exists (path-or-string)
-  (let ((filename (probe-file path-or-string)))
+  ;; Some files can have be accessed only for root user,
+  ;; for example server certificates. Fo such files standard PROBE-FILE
+  ;; will return NIL whereas file does exists.
+  (let ((filename (probe-file-as-root path-or-string)))
     (when filename
       (namestring filename))))
+

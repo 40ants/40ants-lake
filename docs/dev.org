@@ -1,0 +1,47 @@
+* Vision and scope of the project
+
+This library provides an opionated way for building and running small lisp webservices under a systemd and nginx.
+It does not intend to substitute complex CI/CD solutions such as Chef or Ansible.
+
+A service might contain a few components such as a webserver, cron task, telegram bot, etc.
+
+* User roles
+
+** Software developer
+This user created a small web-site or API and wants to install it on a single server where he does all development.
+
+This user has many such small projects and wants to manage these installations in the same way.
+
+He does not want to write config files for nginx, systemd, etc manually for each service.
+
+** Opensource contributor
+This person wants to build and run a service in the development environment.
+
+** CI pipeline
+Is not a human, but a script which might need to build and run a service for testing purpose.
+
+* Limitations
+
+All operations should be made from a command-line.
+
+* Business targets
+
+** Remove code duplication for configs of all my MVP projects
+
+** Make it trivial to run and manage a new webservice
+Objective: it should require a 1 minute to copy Lakefile, make changes, build and install configs.
+
+* User cases
+
+** The system should divide production and dev environment
+It should use separate binaries for production and development to make it possible to test a new version of the service in dev before it will go into the production.
+
+** The system should provide a simple command to build all service components
+
+This command should make clear which steps were performed during the build operation and which artifacts were produced.
+
+** The system should install all necessary scripts to run service components in production
+
+** The separate command should "move" service from dev to production environment
+
+** System should provide commands to start/stop/restart for dev and prod environments

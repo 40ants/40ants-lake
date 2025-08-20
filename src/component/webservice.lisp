@@ -10,11 +10,18 @@
   (:import-from #:serapeum
                 #:fmt)
   (:import-from #:alexandria
+                #:required-argument
                 #:read-file-into-string
                 #:positive-fixnum)
   (:import-from #:40ants-lake/utils
                 #:namestring-if-exists)
-  (:export #:webservice))
+  (:import-from #:40ants-lake/env-val
+                #:env-val
+                #:resolve-env-value)
+  (:import-from #:40ants-lake/environment
+                #:add-dev-suffix-if-needed)
+  (:export #:webservice
+           #:proxy))
 (in-package #:40ants-lake/component/webservice)
 
 
@@ -22,15 +29,15 @@
   ((host :initarg :host
          :type string
          :reader webservice-host)
-   (backend-port :initarg :backend-port
-                 :type positive-fixnum
-                 :reader webservice-backend-port)))
+   (routes :initarg :routes
+           :type list
+           :reader webservice-routes)))
 
 
-(defun webservice (host backend-port)
+(defun webservice (host &key routes)
   (make-instance 'webservice
                  :host host
-                 :backend-port backend-port))
+                 :routes (uiop:ensure-list routes)))
 
 
 (defun check-nginx-config (filename)
@@ -65,29 +72,101 @@
 
 (defmethod collect-installation-steps ((component webservice))
   (let ((app-name (app-name (current-app)))
-        (host (webservice-host component))
-        (port (webservice-backend-port component)))
+        (host (resolve-env-value (webservice-host component))))
     (flet ((on-update (config-path)
              (declare (ignore config-path))
              (lake:sh "sudo nginx -s reload"
                       :echo t)
+             (format t "TRACE: sudo certbot --nginx -d ~A -d www.~A"
+                     host host)
              (lake:sh (fmt "sudo certbot --nginx -d ~A -d www.~A"
                            host host)
                       :echo t)))
-      (list (install-config "nginx.conf"
-                            (uiop:parse-unix-namestring
-                             (fmt "/etc/nginx/sites-enabled/~A.conf"
-                                  app-name))
-                                                        
-                            :check-func #'check-nginx-config
-                            :on-update-func #'on-update
-                            ;; Args for a template
-                            :app-name app-name
-                            :backend-port port
-                            :host host
-                            :ssl-certificate (namestring-if-exists
-                                              (fmt "/etc/letsencrypt/live/~A/fullchain.pem"
-                                                   host))
-                            :ssl-certificate-key (namestring-if-exists
-                                                  (fmt "/etc/letsencrypt/live/~A/privkey.pem"
-                                                       host)))))))
+      (when host
+        (list (install-config "nginx.conf"
+                              (uiop:parse-unix-namestring
+                               (fmt "/etc/nginx/sites-enabled/~A.conf"
+                                    (add-dev-suffix-if-needed app-name)))
+
+                              :partials '(("proxy" . "nginx-routes/proxy.conf"))
+                              :check-func #'check-nginx-config
+                              :on-update-func #'on-update
+                              ;; Args for a template
+                              :app-name app-name
+                              :routes (loop for route in (webservice-routes component)
+                                            collect (route-to-alist component route))
+                              :host host
+                              :ssl-certificate (namestring-if-exists
+                                                (fmt "/etc/letsencrypt/live/~A/fullchain.pem"
+                                                     host))
+                              :ssl-certificate-key (namestring-if-exists
+                                                    (fmt "/etc/letsencrypt/live/~A/privkey.pem"
+                                                         host))))))))
+
+(defclass route ()
+  ((url-prefix :initarg :url-prefix
+               :type string
+               :initform (required-argument :url-prefix)
+               :reader url-prefix)))
+
+
+(defclass proxy (route)
+  ((backend-port :initarg :port
+                 :type (or positive-fixnum
+                           env-val)
+                 :initform (required-argument :port)
+                 :reader backend-port)
+   (backend-host :initarg :host
+                 :type (or string
+                           env-val)
+                 :initform "localhost"
+                 :reader backend-host)))
+
+
+(defun proxy (url-prefix port &key (host "localhost"))
+  (make-instance 'proxy
+                 :url-prefix url-prefix
+                 :host host
+                 :port port))
+
+
+(defclass static (route)
+  ((root :initarg :root
+         :type (or null
+                   string
+                   env-val)
+         :initform nil
+         :reader static-root)))
+
+
+(defun static (url-prefix &key root)
+  "If root is not given, it will be made of server's host name like this:
+
+   ```
+   location /static/ {
+     root /var/www/html/{{ host }};
+   }
+   ```
+"
+  (make-instance 'static
+                 :url-prefix url-prefix
+                 :root root))
+
+
+(defgeneric route-to-alist (component route)
+  (:method ((component webservice) (route route))
+    (list (cons "type"
+                (string-downcase (serapeum:class-name-of route)))
+          (cons "url-prefix"
+                (resolve-env-value (url-prefix route)))))
+  
+  (:method ((component webservice) (route proxy))
+    (append (list (cons "host" (resolve-env-value (backend-host route)))
+                  (cons "port" (resolve-env-value (backend-port route))))
+            (call-next-method)))
+  
+  (:method ((component webservice) (route static))
+    (append (list (cons "root" (or (resolve-env-value (static-root route))
+                                   (fmt "/var/www/html/~A"
+                                        (webservice-host component)))))
+            (call-next-method))))
