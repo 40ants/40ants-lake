@@ -40,7 +40,7 @@
 
 (defgeneric build-app (app)
   (:method ((app app))
-    (lake:sh (format nil "qlot exec ros build roswell/~A.ros"
+    (lake:sh (format nil "qlot exec ros dynamic-space-size=32gb build roswell/~A.ros"
                      (app-name app)))))
 
 
