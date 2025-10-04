@@ -1,6 +1,9 @@
 (uiop:define-package #:40ants-lake/commands/dbshell
   (:use #:cl)
-  (:import-from #:lake)
+  (:import-from #:lake
+		#:sh)
+  (:import-from #:serapeum
+		#:fmt)
   (:import-from #:cl-ansi-text
                 #:green)
   (:import-from #:40ants-lake/app
