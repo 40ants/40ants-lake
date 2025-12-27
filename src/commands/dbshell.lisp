@@ -28,11 +28,13 @@
               (or (uiop:getenv name)
                   (lake-error (format nil "File .local-config.lisp should set \"~A\" environment variable."
                                       name)))))
-       (sh (fmt "psql 'host=~A port=~A user=~A dbname=~A password=~A'"
-                (getenv-or-error "DB_HOST")
-                (getenv-or-error "DB_PORT")
-                (getenv-or-error "DB_USER")
-                (getenv-or-error "DB_NAME")
-                (getenv-or-error "DB_PASSWORD")))))
+       (let ((command (fmt "psql 'host=~A port=~A user=~A dbname=~A password=~A~@[ options=~A~]'"
+                           (getenv-or-error "DB_HOST")
+                           (getenv-or-error "DB_PORT")
+                           (getenv-or-error "DB_USER")
+                           (getenv-or-error "DB_NAME")
+                           (getenv-or-error "DB_PASSWORD")
+                           (uiop:getenv "DB_OPTIONS"))))
+         (sh command))))
     (t
      (lake-error "There is no file .local-config.lisp"))))

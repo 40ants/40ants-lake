@@ -22,7 +22,8 @@
 
 (defun assert-valid-environment (env)
   (unless (member env '(:prod :dev))
-    (error "Environment argument should be :PROD or :DEV.")))
+    (error "Environment argument should be :PROD or :DEV. You gave ~S."
+	   env)))
 
 
 (defmacro with-environment ((environment) &body body)
