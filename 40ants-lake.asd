@@ -13,6 +13,7 @@
                "40ants-lake/commands/install"
                "40ants-lake/commands/build"
                "40ants-lake/commands/dbshell"
+               "40ants-lake/commands/dbdump"
                "40ants-lake/commands/help"
                "40ants-lake/commands/to-prod"
                "40ants-lake/commands/start"
