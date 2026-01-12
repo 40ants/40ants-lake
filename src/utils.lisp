@@ -43,7 +43,7 @@
                                            path))))
 
 
-(declaim (ftype (function (string)
+(declaim (ftype (function (string &key (:prefix string))
                           (values string &optional))
                 get-system-path))
 

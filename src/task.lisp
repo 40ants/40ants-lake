@@ -10,6 +10,7 @@
 
 
 (defmethod lake::execute-task :around ((task t) &optional args)
+  (declare (ignore args))
   ;; This wrapper is used to show to the end user only
   ;; a error message without a backtrace unless *verbose* mode is on.
   (handler-bind ((lake-error (lambda (condition)
