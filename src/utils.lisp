@@ -48,7 +48,7 @@
                 get-system-path))
 
 (defun get-system-path (path &key (prefix "deploy/"))
-    "For a path like deploy/$HOME/.local/share/systemd/user/app.service
+    "For a path like `deploy/$HOME/.local/share/systemd/user/app.service`
      returns /home/username/.local/share/systemd/user/app.service"
   (unless (str:starts-with-p prefix path)
     (error "Path \"~A\" should start with \"deploy/\"."

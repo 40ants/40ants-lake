@@ -4,7 +4,9 @@
                 #:*current-environment*
                 #:assert-valid-environment)
   (:export #:env-val
-           #:resolve-env-value))
+           #:resolve-env-value
+           #:prod-value
+           #:dev-value))
 (in-package #:40ants-lake/env-val)
 
 

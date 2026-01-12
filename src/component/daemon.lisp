@@ -23,7 +23,9 @@
                 #:add-prod-suffix-if-needed
                 #:add-dev-suffix-if-needed)
   (:export #:daemon
-           #:has-daemon-component-p))
+           #:has-daemon-component-p
+           #:daemon-environment
+           #:daemon-user))
 (in-package #:40ants-lake/component/daemon)
 
 
