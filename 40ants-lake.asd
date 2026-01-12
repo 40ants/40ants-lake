@@ -9,7 +9,12 @@
   :class :40ants-asdf-system
   :defsystem-depends-on ("40ants-asdf-system")
   :pathname "src"
-  :depends-on ("40ants-lake/core"
+  :depends-on (;; I have to find a way to load lparallel before lake
+               ;; otherwise it breaks when lake's fasl files are loaded before lparallel.
+               ;; 
+               ;; To make Lake execute tasks in parallel when it is possible:
+               "lparallel"
+               "40ants-lake/core"
                "40ants-lake/commands/install"
                "40ants-lake/commands/build"
                "40ants-lake/commands/dbshell"
@@ -24,13 +29,7 @@
                "40ants-lake/task"
                "40ants-lake/utils"
                "40ants-lake/component/webservice"
-               "40ants-lake/component/daemon"
-               ;; I have to find a way to load lparallel before lake
-               ;; otherwise it breaks when lake's fasl files are loaded before lparallel.
-               ;; 
-               ;; To make Lake execute tasks in parallel when it is possible:
-               ;; "lparallel"
-               )
+               "40ants-lake/component/daemon")
   :in-order-to ((test-op (test-op "40ants-lake-tests"))))
 
 
