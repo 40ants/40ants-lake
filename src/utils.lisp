@@ -36,20 +36,20 @@
                 get-full-path))
 
 (defun get-full-path (path)
-  "For a path like deploy/$HOME/.local/share/systemd/user/app.service
-   returns deploy/.local/share/systemd/user/app.service"
+  "For a path like `deploy/$HOME/.local/share/systemd/user/app.service`
+   returns `deploy/.local/share/systemd/user/app.service`"
   (namestring (probe-file (str:replace-all "/$HOME/"
                                            "/"
                                            path))))
 
 
-(declaim (ftype (function (string)
+(declaim (ftype (function (string &key (:prefix string))
                           (values string &optional))
                 get-system-path))
 
 (defun get-system-path (path &key (prefix "deploy/"))
-    "For a path like deploy/$HOME/.local/share/systemd/user/app.service
-     returns /home/username/.local/share/systemd/user/app.service"
+    "For a path like `deploy/$HOME/.local/share/systemd/user/app.service`
+     returns `/home/username/.local/share/systemd/user/app.service`"
   (unless (str:starts-with-p prefix path)
     (error "Path \"~A\" should start with \"deploy/\"."
            path))
