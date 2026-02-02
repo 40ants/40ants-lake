@@ -17,6 +17,14 @@
 (in-package #:40ants-lake/commands/dbdump)
 
 
+(defun get-dump-command ()
+  (cond
+    ((probe-file "/usr/lib/postgresql/17/bin/pg_dump")
+     "/usr/lib/postgresql/17/bin/pg_dump")
+    (t
+     "pg_dump")))
+
+
 (lake:task "dbdump-schema" ()
   (uiop:with-output-file (stream "/proc/self/comm" :if-exists :overwrite)
     (cl:write-string "sbcl-dbdump"
@@ -25,7 +33,24 @@
     ((probe-file ".local-config.lisp")
      (load ".local-config.lisp")
      
-     (let ((command (fmt "pg_dump -s -f schema.sql ~A"
+     (let ((command (fmt "~A -s -f schema.sql ~A"
+                         (get-dump-command)
+                         (get-pg-conn-string))))
+       (sh command)))
+    (t
+     (lake-error "There is no file .local-config.lisp"))))
+
+
+(lake:task "dbdump-backup" ()
+  (uiop:with-output-file (stream "/proc/self/comm" :if-exists :overwrite)
+    (cl:write-string "sbcl-dbdump"
+         	     stream))
+  (cond
+    ((probe-file ".local-config.lisp")
+     (load ".local-config.lisp")
+     
+     (let ((command (fmt "~A -f db/backup.dump -Fd schema.sql ~A"
+                         (get-dump-command)
                          (get-pg-conn-string))))
        (sh command)))
     (t

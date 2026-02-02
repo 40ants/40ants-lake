@@ -21,7 +21,13 @@
   (:import-from #:40ants-lake/environment
                 #:add-dev-suffix-if-needed)
   (:export #:webservice
-           #:proxy))
+           #:proxy
+           #:route
+           #:url-prefix
+           #:backend-port
+           #:backend-host
+           #:webservice-host
+           #:webservice-routes))
 (in-package #:40ants-lake/component/webservice)
 
 

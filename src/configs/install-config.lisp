@@ -15,8 +15,15 @@
                 #:green)
   (:import-from #:serapeum
                 #:fmt)
-  (:export
-   #:install-config))
+  (:export #:install-config
+           #:template-filename
+           #:target-filename
+           #:template-vars
+           #:template-partials
+           #:chown-to
+           #:chmod-to
+           #:check-func
+           #:on-update-func))
 (in-package #:40ants-lake/configs/install-config)
 
 

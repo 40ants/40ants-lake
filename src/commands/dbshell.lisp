@@ -6,6 +6,8 @@
 		#:fmt)
   (:import-from #:cl-ansi-text
                 #:green)
+  (:import-from #:serapeum
+                #:fmt)
   (:import-from #:40ants-lake/app
                 #:*apps*
                 #:app-name
