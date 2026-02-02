@@ -9,5 +9,7 @@
                               "ASDF"
                               "REPL"
                               "HTTP"))
+  (0.2.0 2026-02-02
+         "* Added command dbdump-schema.")
   (0.1.0 2024-09-02
          "* Initial version."))
