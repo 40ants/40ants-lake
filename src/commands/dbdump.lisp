@@ -33,7 +33,7 @@
     ((probe-file ".local-config.lisp")
      (load ".local-config.lisp")
      
-     (let ((command (fmt "~A -s -f schema.sql ~A"
+     (let ((command (fmt "~A -s -f schema.sql --exclude-schema _timescaledb_internal ~A"
                          (get-dump-command)
                          (get-pg-conn-string))))
        (sh command)))
