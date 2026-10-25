@@ -10,6 +10,12 @@
            #:defapps
            #:app-name
            #:app-components
+           #:app-target-host
+           #:app-revisions-to-keep
+           #:app-release-paths
+           #:app-extra-revisions
+           #:app-sbcl-pin
+           #:app-health-check-url
            #:current-app))
 (in-package #:40ants-lake/app)
 
@@ -28,13 +34,49 @@
          :reader app-name)
    (components :initarg :components
                :type list
-               :reader app-components)))
+               :reader app-components)
+   (target-host :initarg :target-host
+                :type (or null string)
+                :initform nil
+                :reader app-target-host)
+   (revisions-to-keep :initarg :revisions-to-keep
+                      :type integer
+                      :initform 3
+                      :reader app-revisions-to-keep)
+   (release-paths :initarg :release-paths
+                  :type list
+                  :initform '(("bin" . "bin/"))
+                  :reader app-release-paths)
+   (extra-revisions :initarg :extra-revisions
+                    :type list
+                    :initform nil
+                    :reader app-extra-revisions)
+   (sbcl-pin :initarg :sbcl-pin
+             :type (or null string)
+             :initform nil
+             :reader app-sbcl-pin)
+   (health-check-url :initarg :health-check-url
+                     :type (or null string)
+                     :initform nil
+                     :reader app-health-check-url)))
 
 
-(defun app (name &key components)
+(defun app (name &key components
+                   target-host
+                   (revisions-to-keep 3)
+                   (release-paths '(("bin" . "bin/")))
+                   extra-revisions
+                   sbcl-pin
+                   health-check-url)
   (make-instance 'app
                  :name name
-                 :components (uiop:ensure-list components)))
+                 :components (uiop:ensure-list components)
+                 :target-host target-host
+                 :revisions-to-keep revisions-to-keep
+                 :release-paths release-paths
+                 :extra-revisions extra-revisions
+                 :sbcl-pin sbcl-pin
+                 :health-check-url health-check-url))
 
 
 
