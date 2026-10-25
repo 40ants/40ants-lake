@@ -8,7 +8,8 @@
   :bug-tracker "https://github.com/40ants/40ants-lake/issues"
   :pathname "t"
   :depends-on ("40ants-lake-tests/core"
-               "40ants-lake-tests/app")
+               "40ants-lake-tests/app"
+               "40ants-lake-tests/build")
   :perform (test-op (op c)
                     (unless (symbol-call :rove :run c)
                       (error "Tests failed"))))
