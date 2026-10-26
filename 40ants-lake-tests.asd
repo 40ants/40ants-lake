@@ -9,7 +9,8 @@
   :pathname "t"
   :depends-on ("40ants-lake-tests/core"
                "40ants-lake-tests/app"
-               "40ants-lake-tests/build")
+               "40ants-lake-tests/build"
+               "40ants-lake-tests/release")
   :perform (test-op (op c)
                     (unless (symbol-call :rove :run c)
                       (error "Tests failed"))))
