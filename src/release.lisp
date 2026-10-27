@@ -15,10 +15,9 @@
   (let ((dir (if subpath
                  (merge-pathnames subpath root)
                  root)))
-    (string-right-trim '(#\Newline #\Return #\Space)
-      (uiop:run-program (list "git" "-C" (uiop:native-namestring dir)
-                              "rev-parse" "HEAD")
-                        :output :string))))
+    (uiop:run-program (list "git" "-C" (uiop:native-namestring dir)
+                            "rev-parse" "HEAD")
+                      :output '(:string :stripped t))))
 
 
 (-> copy-directory (pathname pathname) (values null &optional))
@@ -64,12 +63,11 @@ unique within a single Lisp image, and two concurrent deployments with the
 same counter would otherwise share (and could delete) one payload."
   (uiop:ensure-directory-pathname
    (pathname
-    (string-right-trim '(#\Newline #\Return #\Space)
-      (uiop:run-program
-       (list "mktemp" "-d"
-             (namestring (merge-pathnames "staging-XXXXXX"
-                                          (uiop:temporary-directory))))
-       :output :string)))))
+    (uiop:run-program
+     (list "mktemp" "-d"
+           (namestring (merge-pathnames "staging-XXXXXX"
+                                        (uiop:temporary-directory))))
+     :output '(:string :stripped t)))))
 
 
 (defun make-staging (app root)

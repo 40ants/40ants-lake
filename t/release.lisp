@@ -14,10 +14,9 @@
                            command)))
 
 (defun git-head (dir)
-  (string-right-trim '(#\Newline #\Return #\Space)
-    (uiop:run-program (list "git" "-C" (uiop:native-namestring dir)
-                            "rev-parse" "HEAD")
-                      :output :string)))
+  (uiop:run-program (list "git" "-C" (uiop:native-namestring dir)
+                          "rev-parse" "HEAD")
+                    :output '(:string :stripped t)))
 
 (defun git-init (dir)
   (%git-in dir "init" "-q")
