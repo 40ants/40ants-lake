@@ -11,7 +11,7 @@
 * `lake build` now builds via the project's `build.lisp` (Deploy
   convention) when present, pinning SBCL with `sbcl-pin`; projects
   without `build.lisp` keep the legacy `roswell/<name>.ros` build.
-* Added release staging assembly (`40ants-lake/release:make-staging`).
+* Added release staging assembly (`40ants-lake/release:make-staging`); staging directories are created atomically and unique across processes (`mktemp -d`).
 * `lake to-prod` now installs releases via the
   `/usr/local/sbin/install-release` helper into
   `/srv/services/<name>/releases/`, with atomic `current` flip,

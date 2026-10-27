@@ -55,8 +55,28 @@
 
 
 (-> make-staging (app pathname) (values pathname &optional))
+(-> %make-staging-directory () (values pathname &optional))
+(defun %make-staging-directory ()
+  "Atomically create a unique staging directory under the temporary directory.
+
+Uses `mktemp -d` so the name is unique across processes: `gensym` is only
+unique within a single Lisp image, and two concurrent deployments with the
+same counter would otherwise share (and could delete) one payload."
+  (uiop:ensure-directory-pathname
+   (pathname
+    (string-right-trim '(#\Newline #\Return #\Space)
+      (uiop:run-program
+       (list "mktemp" "-d"
+             (namestring (merge-pathnames "staging-XXXXXX"
+                                          (uiop:temporary-directory))))
+       :output :string)))))
+
+
 (defun make-staging (app root)
   "Assemble a temporary staging directory for a release of APP.
+
+The staging directory is created atomically and is unique across processes;
+concurrent deployments cannot collide or reuse a failed attempt's directory.
 
 Each element of APP-RELEASE-PATHS is a (staging-path . source-path) pair:
 directories are copied recursively, files create their parent directories.
@@ -66,9 +86,7 @@ HEAD` of the nested repository at ROOT/git-path.
 
 The caller is responsible for removing the returned directory after the
 release has been installed."
-  (let ((staging (merge-pathnames (format nil "staging-~A/" (gensym ""))
-                                  (uiop:temporary-directory))))
-    (ensure-directories-exist staging)
+  (let ((staging (%make-staging-directory)))
     (dolist (pair (app-release-paths app))
       (copy-to-staging staging root pair))
     (write-revision-file staging "REVISION" (git-revision root))
