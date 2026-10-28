@@ -1,0 +1,181 @@
+#!/usr/bin/env bash
+# install-release — the single write entry point into /srv/services.
+#
+# Usage:
+#   install-release <name> <src-dir> [keep]
+#       Install a new revision (named by UTC time of installation),
+#       run the smoke test as the service user, atomically flip
+#       `current`, daemon-reload + restart, prune old revisions.
+#   install-release --switch <name> <rev>
+#       Roll back: flip `current` to an existing revision and restart.
+#       Retention is not run.
+#
+# Env overrides (for tests):
+#   SRV_SERVICES_ROOT  (default /srv/services)
+#   SYSTEMCTL          (default systemctl)
+#   RUN_AS             (default "sudo -u")
+#   LOG_FILE           (default /dev/stderr)
+
+set -Eeuo pipefail
+
+SRV_SERVICES_ROOT="${SRV_SERVICES_ROOT:-/srv/services}"
+SYSTEMCTL="${SYSTEMCTL:-systemctl}"
+RUN_AS="${RUN_AS:-sudo -u}"
+LOG_FILE="${LOG_FILE:-/dev/stderr}"
+DEFAULT_KEEP=3
+
+read -ra SYSTEMCTL_CMD <<<"$SYSTEMCTL"
+read -ra RUN_AS_CMD <<<"$RUN_AS"
+
+log() {
+  printf '[install-release] %s\n' "$*" >>"$LOG_FILE"
+}
+
+die() {
+  log "ERROR: $*"
+  printf '[install-release] ERROR: %s\n' "$*" >&2
+  exit 1
+}
+
+usage() {
+  cat >&2 <<'USAGE'
+Usage: install-release <name> <src-dir> [keep]
+       install-release --switch <name> <rev>
+USAGE
+  exit 2
+}
+
+systemctl_() {
+  "${SYSTEMCTL_CMD[@]}" "$@"
+}
+
+as_service_user() {
+  # as_service_user <name> <command...>
+  local name="$1"
+  shift
+  "${RUN_AS_CMD[@]}" "$name" "$@"
+}
+
+validate_name() {
+  [[ "$1" =~ ^[a-z0-9][a-z0-9-]*$ ]] || die "Invalid service name: $1"
+}
+
+current_rev() {
+  # current_rev <srv> — prints the basename of the `current` symlink target.
+  local target
+  target=$(readlink "$1/current" 2>/dev/null) || return 1
+  printf '%s\n' "${target##*/}"
+}
+
+flip_current() {
+  # flip_current <srv> <rev> — atomic symlink flip via a temporary
+  # name and rename; never an in-place directory switch.
+  local srv="$1" rev="$2"
+  (
+    cd "$srv"
+    ln -s "releases/$rev" current.tmp
+    mv -Tf current.tmp current
+  )
+  log "current -> releases/$rev"
+}
+
+retention() {
+  # retention <srv> <keep> — delete oldest revisions beyond <keep>,
+  # never touching the target of `current`.
+  local srv="$1" keep="$2"
+  local cur rev total
+  cur=$(current_rev "$srv") || cur=""
+  local revs=()
+  mapfile -t revs < <(find "$srv/releases" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
+  total=${#revs[@]}
+  for rev in "${revs[@]}"; do
+    if ((total <= keep)); then
+      break
+    fi
+    if [[ "$rev" == "$cur" ]]; then
+      continue
+    fi
+    log "retention: removing old revision $rev"
+    rm -rf "$srv/releases/$rev"
+    total=$((total - 1))
+  done
+}
+
+cmd_install() {
+  # cmd_install <name> <src-dir> [keep]
+  local name="$1" src="$2" keep="${3:-}"
+  [[ -n "$keep" ]] || keep="$DEFAULT_KEEP"
+  validate_name "$name"
+  [[ "$keep" =~ ^[0-9]+$ ]] || die "keep must be a positive integer: $keep"
+  [[ -d "$src" ]] || die "Source directory does not exist: $src"
+
+  local srv="$SRV_SERVICES_ROOT/$name"
+  [[ -d "$srv" ]] || die "Service directory does not exist: $srv"
+  mkdir -p "$srv/releases"
+
+  local rev target
+  rev=$(date -u +%Y%m%d-%H%M%S)
+  [[ -e "$srv/releases/$rev" ]] && die "Revision $rev already exists; retry in a second"
+  target="$srv/releases/$rev"
+
+  log "installing $name revision $rev from $src"
+  mkdir -p "$target"
+  cp -a "$src/." "$target/"
+
+  [[ -f "$target/bin/$name" ]] || {
+    rm -rf "$target"
+    die "Release has no bin/$name executable"
+  }
+
+  if [[ $(id -u) -eq 0 ]]; then
+    chown -R root:root "$target"
+  else
+    log "not running as root: skipping chown to root:root"
+  fi
+  find "$target" -type d -exec chmod 0755 {} +
+  find "$target" -type f -exec chmod 0644 {} +
+  chmod 0755 "$target/bin/$name"
+
+  log "smoke: bin/$name --help as user $name"
+  if ! as_service_user "$name" "$target/bin/$name" --help >>"$LOG_FILE" 2>&1; then
+    log "smoke failed; removing revision $rev; current is untouched"
+    rm -rf "$target"
+    die "Smoke test failed for revision $rev"
+  fi
+
+  flip_current "$srv" "$rev"
+  log "systemctl daemon-reload"
+  systemctl_ daemon-reload
+  log "systemctl restart $name"
+  systemctl_ restart "$name"
+  retention "$srv" "$keep"
+  log "installed $name revision $rev (keep=$keep)"
+}
+
+cmd_switch() {
+  # cmd_switch <name> <rev>
+  local name="$1" rev="$2"
+  validate_name "$name"
+  local srv="$SRV_SERVICES_ROOT/$name"
+  [[ -d "$srv/releases/$rev" ]] || die "Revision $rev does not exist"
+  local cur
+  cur=$(current_rev "$srv") || cur=""
+  [[ "$rev" == "$cur" ]] && die "Revision $rev is already current"
+
+  flip_current "$srv" "$rev"
+  log "systemctl restart $name"
+  systemctl_ restart "$name"
+  log "switched $name to revision $rev (no retention)"
+}
+
+main() {
+  if [[ "${1:-}" == "--switch" ]]; then
+    [[ $# -eq 3 ]] || usage
+    cmd_switch "$2" "$3"
+  else
+    [[ $# -ge 2 && $# -le 3 ]] || usage
+    cmd_install "$1" "$2" "${3:-}"
+  fi
+}
+
+main "$@"

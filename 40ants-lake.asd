@@ -26,6 +26,7 @@
                "40ants-lake/commands/restart"
                "40ants-lake/commands/default"
                "40ants-lake/app"
+               "40ants-lake/release"
                "40ants-lake/task"
                "40ants-lake/utils"
                "40ants-lake/component/webservice"
