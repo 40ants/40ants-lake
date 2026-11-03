@@ -16,6 +16,7 @@
            #:app-release-paths
            #:app-extra-revisions
            #:app-sbcl-pin
+           #:app-lisp
            #:app-health-check-url
            #:release-build-command
            #:uses-build-lisp-p
@@ -59,6 +60,10 @@
              :type (or null string)
              :initform nil
              :reader app-sbcl-pin)
+   (lisp :initarg :lisp
+         :type (or null string)
+         :initform "sbcl-bin"
+         :reader app-lisp)
    (health-check-url :initarg :health-check-url
                      :type (or null string)
                      :initform nil
@@ -71,6 +76,7 @@
                    (release-paths '(("bin" . "bin/")))
                    extra-revisions
                    sbcl-pin
+                   (lisp "sbcl-bin")
                    health-check-url)
   (make-instance 'app
                  :name name
@@ -80,19 +86,24 @@
                  :release-paths release-paths
                  :extra-revisions extra-revisions
                  :sbcl-pin sbcl-pin
+                 :lisp lisp
                  :health-check-url health-check-url))
 
 
 
-(-> release-build-command (string (or null string)) (values string &optional))
-(defun release-build-command (name sbcl-pin)
+(-> release-build-command (app) (values string &optional))
+(defun release-build-command (app)
   "Return the command building the release via the project's build.lisp.
 
-NAME is the app name; build.lisp itself knows the project to build.
-When SBCL-PIN is given, the command pins the SBCL version with -L."
-  (declare (ignore name))
-  (format nil "qlot exec ros~@[ -L ~A~] run -- --non-interactive --load build.lisp"
-          sbcl-pin))
+build.lisp itself knows the project to build. The Lisp is passed to
+Roswell with -L: the SBCL-PIN slot wins when set, otherwise the LISP
+slot is used (\"sbcl-bin\" by default). When both are NIL, no -L
+argument is given and Roswell picks its default Lisp. Any spec
+accepted by `ros run -L` works, for example \"ccl-bin/1.13\"."
+  (let ((lisp-spec (or (app-sbcl-pin app)
+                       (app-lisp app))))
+    (format nil "qlot exec ros~@[ -L ~A~] run -- --non-interactive --load build.lisp"
+            lisp-spec)))
 
 
 (-> uses-build-lisp-p ((or pathname string null)) (values boolean &optional))
@@ -113,7 +124,7 @@ Projects without build.lisp keep using the legacy roswell/<name>.ros build."
 (defgeneric build-app (app)
   (:method ((app app))
     (lake:sh (if (uses-build-lisp-p (uiop:getcwd))
-                 (release-build-command (app-name app) (app-sbcl-pin app))
+                 (release-build-command app)
                  (legacy-build-command (app-name app))))))
 
 
