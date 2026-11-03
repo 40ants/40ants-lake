@@ -2,6 +2,8 @@
   (:use #:cl)
   (:import-from #:serapeum
                 #:->)
+  (:import-from #:asdf
+                #:system-relative-pathname)
   (:import-from #:lake)
   (:import-from #:40ants-lake/utils
                 #:get-system-path
@@ -27,20 +29,37 @@
                 #:add-prod-suffix-if-needed
                 #:with-environment)
   (:export #:install-release-command
+           #:install-release-script-path
            #:health-check-commands
            #:deploy-app))
 (in-package #:40ants-lake/commands/to-prod)
+
+
+(-> install-release-script-path () (values string &optional))
+(defun install-release-script-path ()
+  "Return the absolute path of the install-release helper shipped in the 40ants-lake checkout.
+
+The helper lives next to the lake sources and is always in sync with the
+running code; no host-wide copy in /usr/local/sbin is required."
+  (let ((path (system-relative-pathname :40ants-lake "scripts/install-release")))
+    (unless (probe-file path)
+      (error "install-release helper was not found in the 40ants-lake checkout: ~A"
+             path))
+    (namestring path)))
 
 
 (-> install-release-command (string string integer) (values string &optional))
 (defun install-release-command (name staging keep)
   "Return the command installing STAGING as a new release of the service NAME.
 
-The helper /usr/local/sbin/install-release is the single write entry point
-into /srv/services: it copies the revision, runs the smoke test as the
-service user, atomically flips `current`, restarts the service and prunes
-old revisions down to KEEP."
-  (format nil "sudo /usr/local/sbin/install-release ~A ~A ~A" name staging keep))
+The helper is the single write entry point into /srv/services: it copies
+the revision, runs the smoke test as the service user, atomically flips
+`current`, restarts the service and prunes old revisions down to KEEP."
+  (format nil "sudo ~A ~A ~A ~A"
+          (install-release-script-path)
+          name
+          staging
+          keep))
 
 
 (-> health-check-commands (app) (values list &optional))

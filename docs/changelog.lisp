@@ -9,6 +9,8 @@
                               "ASDF"
                               "REPL"
                               "HTTP"))
+  (0.3.1 2026-11-04
+         "* `lake to-prod` invokes the `install-release` helper from the 40ants-lake checkout instead of a host-wide copy in `/usr/local/sbin`; the copy and the sudoers rule are no longer needed.")
   (0.3.0 2026-10-27
          "* Added deploy slots to `app`: `target-host`, `revisions-to-keep`, `release-paths`, `extra-revisions`, `sbcl-pin`, `health-check-url`.
           * `lake build` builds via the project's `build.lisp` when present, otherwise falls back to the legacy `roswell/<name>.ros` build.

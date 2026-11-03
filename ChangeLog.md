@@ -2,6 +2,16 @@
 
 # ChangeLog
 
+<a id="x-2840ANTS-LAKE-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.3.1 (2026-11-04)
+
+* `lake to-prod` now invokes the `install-release` helper from the
+  40ants-lake checkout (`scripts/install-release`, resolved via
+  `asdf:system-source-directory`) instead of a copy installed at
+  `/usr/local/sbin/install-release`; the host-wide copy and the
+  sudoers rule for it are no longer needed.
+
 <a id="x-2840ANTS-LAKE-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.3.0 (2026-10-27)
