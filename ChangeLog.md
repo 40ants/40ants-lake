@@ -8,8 +8,9 @@
 
 * Added `lisp` app slot (default `sbcl-bin`): the Roswell `-L` spec used
   by `lake build` and `lake to-prod`; any spec accepted by
-  `ros run -L` works, e.g. `ccl-bin/1.13`. `sbcl-pin` still takes
-  precedence when set.
+  `ros run -L` works, e.g. `ccl-bin/1.13` or a pinned
+  `sbcl-bin/2.5.9`. The `sbcl-pin` slot was removed — pass its value
+  as `:lisp`.
 * `lake to-prod` now invokes the `install-release` helper from the
   40ants-lake checkout (`scripts/install-release`, resolved via
   `asdf:system-source-directory`) instead of a copy installed at

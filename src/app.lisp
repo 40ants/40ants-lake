@@ -15,7 +15,6 @@
            #:app-revisions-to-keep
            #:app-release-paths
            #:app-extra-revisions
-           #:app-sbcl-pin
            #:app-lisp
            #:app-health-check-url
            #:release-build-command
@@ -56,10 +55,6 @@
                     :type list
                     :initform nil
                     :reader app-extra-revisions)
-   (sbcl-pin :initarg :sbcl-pin
-             :type (or null string)
-             :initform nil
-             :reader app-sbcl-pin)
    (lisp :initarg :lisp
          :type (or null string)
          :initform "sbcl-bin"
@@ -75,7 +70,6 @@
                    (revisions-to-keep 3)
                    (release-paths '(("bin" . "bin/")))
                    extra-revisions
-                   sbcl-pin
                    (lisp "sbcl-bin")
                    health-check-url)
   (make-instance 'app
@@ -85,7 +79,6 @@
                  :revisions-to-keep revisions-to-keep
                  :release-paths release-paths
                  :extra-revisions extra-revisions
-                 :sbcl-pin sbcl-pin
                  :lisp lisp
                  :health-check-url health-check-url))
 
@@ -96,12 +89,11 @@
   "Return the command building the release via the project's build.lisp.
 
 build.lisp itself knows the project to build. The Lisp is passed to
-Roswell with -L: the SBCL-PIN slot wins when set, otherwise the LISP
-slot is used (\"sbcl-bin\" by default). When both are NIL, no -L
-argument is given and Roswell picks its default Lisp. Any spec
-accepted by `ros run -L` works, for example \"ccl-bin/1.13\"."
-  (let ((lisp-spec (or (app-sbcl-pin app)
-                       (app-lisp app))))
+Roswell with -L, taken from the LISP slot (\"sbcl-bin\" by default).
+Any spec accepted by `ros run -L` works, for example \"ccl-bin/1.13\"
+or a pinned \"sbcl-bin/2.5.9\". When the slot is NIL, no -L argument
+is given and Roswell picks its default Lisp."
+  (let ((lisp-spec (app-lisp app)))
     (format nil "qlot exec ros~@[ -L ~A~] run -- --non-interactive --load build.lisp"
             lisp-spec)))
 

@@ -10,7 +10,7 @@
                               "REPL"
                               "HTTP"))
   (0.3.1 2026-11-04
-         "* Added `lisp` app slot (default `sbcl-bin`): the Roswell `-L` spec used by `lake build` and `lake to-prod`; any spec accepted by `ros run -L` works, e.g. `ccl-bin/1.13`. `sbcl-pin` still takes precedence when set.
+         "* Added `lisp` app slot (default `sbcl-bin`): the Roswell `-L` spec used by `lake build` and `lake to-prod`; any spec accepted by `ros run -L` works, e.g. `ccl-bin/1.13` or a pinned `sbcl-bin/2.5.9`. The `sbcl-pin` slot was removed — pass its value as `:lisp`.
          * `lake to-prod` invokes the `install-release` helper from the 40ants-lake checkout instead of a host-wide copy in `/usr/local/sbin`; the copy and the sudoers rule are no longer needed.")
   (0.3.0 2026-10-27
          "* Added deploy slots to `app`: `target-host`, `revisions-to-keep`, `release-paths`, `extra-revisions`, `sbcl-pin`, `health-check-url`.
