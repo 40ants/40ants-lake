@@ -18,6 +18,7 @@
            #:app-lisp
            #:app-health-check-url
            #:release-build-command
+           #:delete-stale-artifact
            #:uses-build-lisp-p
            #:legacy-build-command
            #:current-app))
@@ -92,10 +93,22 @@ build.lisp itself knows the project to build. The Lisp is passed to
 Roswell with -L, taken from the LISP slot (\"sbcl-bin\" by default).
 Any spec accepted by `ros run -L` works, for example \"ccl-bin/1.13\"
 or a pinned \"sbcl-bin/2.5.9\". When the slot is NIL, no -L argument
-is given and Roswell picks its default Lisp."
+is given and Roswell picks its default Lisp.
+
+Roswell forwards everything after -- to the implementation's own
+command line, and those flags are implementation specific:
+--non-interactive exists on SBCL, while CCL rejects it with
+\"Unknown option\" and gets only --load. That is safe because
+build.lisp quits the process explicitly both on success and failure."
   (let ((lisp-spec (app-lisp app)))
-    (format nil "qlot exec ros~@[ -L ~A~] run -- --non-interactive --load build.lisp"
-            lisp-spec)))
+    (cond ((null lisp-spec)
+           "qlot exec ros run -- --non-interactive --load build.lisp")
+          ((uiop:string-prefix-p "ccl" lisp-spec)
+           (format nil "qlot exec ros -L ~A run -- --load build.lisp"
+                   lisp-spec))
+          (t
+           (format nil "qlot exec ros -L ~A run -- --non-interactive --load build.lisp"
+                   lisp-spec)))))
 
 
 (-> uses-build-lisp-p ((or pathname string null)) (values boolean &optional))
@@ -113,11 +126,26 @@ Projects without build.lisp keep using the legacy roswell/<name>.ros build."
   (format nil "qlot exec ros dynamic-space-size=32gb build roswell/~A.ros" name))
 
 
+(-> delete-stale-artifact (app) (values boolean &optional))
+(defun delete-stale-artifact (app)
+  "Delete the previous bin/<name> artifact, if any.
+
+ASDF skips deploy-op when its output file is newer than the inputs, so
+without this a build would silently keep the stale binary when nothing
+tracked changed — for example right after switching the LISP slot from
+one implementation to another."
+  (uiop:delete-file-if-exists
+   (merge-pathnames (format nil "bin/~A" (app-name app))
+                    (uiop:getcwd))))
+
+
 (defgeneric build-app (app)
   (:method ((app app))
-    (lake:sh (if (uses-build-lisp-p (uiop:getcwd))
-                 (release-build-command app)
-                 (legacy-build-command (app-name app))))))
+    (if (uses-build-lisp-p (uiop:getcwd))
+        (progn
+          (delete-stale-artifact app)
+          (lake:sh (release-build-command app)))
+        (lake:sh (legacy-build-command (app-name app))))))
 
 
 (defmacro defapps (&body apps)
