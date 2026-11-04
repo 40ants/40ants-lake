@@ -19,6 +19,9 @@
   building: ASDF skips deploy-op when its output is newer than the
   inputs, which silently kept the stale binary after switching the
   `lisp` slot from one implementation to another.
+* The smoke test runs with an explicit valid `HOME` (the service
+  `data/` directory): system users have home `/nonexistent`, and CCL
+  binaries warned `cannot find home directory` on every smoke run.
 * `lake to-prod` now invokes the `install-release` helper from the
   40ants-lake checkout (`scripts/install-release`, resolved via
   `asdf:system-source-directory`) instead of a copy installed at
