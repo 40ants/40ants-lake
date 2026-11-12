@@ -2,6 +2,16 @@
 
 # ChangeLog
 
+## UNRELEASED
+
+* `lake to-prod` now releases the binary already built in `bin/` when
+  that directory exists and contains at least one file that is not a
+  shared library: the build step is skipped and the existing artifact
+  is deployed as-is, so a manually built binary can be shipped exactly
+  as compiled. The build still runs when `bin/` is missing, empty, or
+  holds only `.so` libraries (versioned sonames included). `lake build`
+  keeps rebuilding unconditionally.
+
 <a id="x-2840ANTS-LAKE-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.3.1 (2026-11-04)

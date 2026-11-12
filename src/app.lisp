@@ -19,6 +19,7 @@
            #:app-health-check-url
            #:release-build-command
            #:delete-stale-artifact
+           #:bin-ready-p
            #:uses-build-lisp-p
            #:legacy-build-command
            #:current-app))
@@ -137,6 +138,36 @@ one implementation to another."
   (uiop:delete-file-if-exists
    (merge-pathnames (format nil "bin/~A" (app-name app))
                     (uiop:getcwd))))
+
+
+(-> shared-library-name-p (string) (values boolean &optional))
+(defun shared-library-name-p (name)
+  "Return T when the file NAME looks like a shared library.
+
+Matches libfoo.so as well as versioned sonames such as libfoo.so.1 and
+libfoo.so.1.5.7, which is how Deploy bundles native libraries in bin/."
+  (let ((pos (search ".so" name)))
+    (and pos
+         (let ((rest (subseq name (+ pos 3))))
+           (or (zerop (length rest))
+               (char= (char rest 0) #\.))))))
+
+
+(-> bin-ready-p (&optional pathname) (values boolean &optional))
+(defun bin-ready-p (&optional (root (uiop:getcwd)))
+  "Return T when ROOT/bin holds a build that can be released as-is.
+
+The directory exists and contains at least one file that is not a
+shared library. Deploy fills bin/ with the executable plus *.so
+libraries, so a bin/ holding only libraries means the executable
+artifact is missing and the build has to run. 'lake to-prod' uses this
+to deploy the already built binary; 'lake build' keeps rebuilding
+unconditionally."
+  (let ((bin (merge-pathnames "bin/" root)))
+    (and (uiop:directory-exists-p bin)
+         (loop for file in (uiop:directory-files bin)
+               thereis (not (shared-library-name-p
+                             (file-namestring file)))))))
 
 
 (defgeneric build-app (app)

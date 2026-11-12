@@ -15,6 +15,7 @@
                 #:app-target-host
                 #:app-revisions-to-keep
                 #:app-health-check-url
+                #:bin-ready-p
                 #:build-app
                 #:uses-build-lisp-p
                 #:*apps*)
@@ -76,11 +77,20 @@ also a curl returning the HTTP code (000 means nothing is listening)."
 
 (-> deploy-release (app) (values &optional))
 (defun deploy-release (app)
-  "Build APP, assemble a staging directory and install it as a new release.
+  "Release APP: build it unless bin/ already holds one, assemble a
+staging directory and install it as a new release.
+
+When BIN-READY-P is true the existing bin/ is released as-is: a binary
+built earlier, manually or by a previous 'lake build', can be deployed
+without rebuilding. Run 'lake build' to force a fresh build.
 
 The staging directory is removed after the install; the service is
 restarted by the install-release helper itself."
-  (build-app app)
+  (if (bin-ready-p)
+      (format *error-output*
+              (yellow
+               "bin/ already contains a build; releasing it as-is (rebuild with 'lake build').~%"))
+      (build-app app))
   (let ((staging (make-staging app (uiop:getcwd))))
     (unwind-protect
          (progn
