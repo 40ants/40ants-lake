@@ -137,16 +137,24 @@ cmd_install() {
   chmod 0755 "$target/bin/$name"
 
   log "smoke: bin/$name --help as user $name"
-  # HOME задаём явно: у системного пользователя домашний каталог
-  # /nonexistent, и при старте CCL-бинарник предупреждает
-  # "cannot find home directory", если HOME не резолвится.
+  # Output of the smoke run is discarded on success (a successful --help
+  # produces usage text nobody needs to see) and shown only on failure.
+  # HOME is set explicitly: system users have home /nonexistent, and a CCL
+  # binary warns "cannot find home directory" when HOME does not resolve.
   local smoke_home="$srv/data"
   [[ -d "$smoke_home" ]] || smoke_home="$srv"
-  if ! as_service_user "$name" env HOME="$smoke_home" "$target/bin/$name" --help >>"$LOG_FILE" 2>&1; then
+  local smoke_out
+  smoke_out=$(mktemp)
+  if ! as_service_user "$name" env HOME="$smoke_home" \
+      "$target/bin/$name" --help >"$smoke_out" 2>&1; then
     log "smoke failed; removing revision $rev; current is untouched"
+    log "smoke output:"
+    cat "$smoke_out" >>"$LOG_FILE"
+    rm -f "$smoke_out"
     rm -rf "$target"
     die "Smoke test failed for revision $rev"
   fi
+  rm -f "$smoke_out"
 
   flip_current "$srv" "$rev"
   log "systemctl daemon-reload"
