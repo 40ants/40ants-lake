@@ -114,11 +114,15 @@ setup_env() {
 }
 
 mk_fixture() {
-  # mk_fixture [smoke-exit-code] — emits marker output on stdout and stderr
-  # so tests can assert where that output ends up.
+  # mk_fixture [smoke-exit-code] — emits a marker on stdout; when failing,
+  # also emits a marker on stderr so tests can assert where output ends up.
   local code="${1:-0}"
   mkdir -p "$FIX/bin"
-  printf '#!/bin/sh\necho SMOKE-STDOUT\necho SMOKE-STDERR >&2\nexit %s\n' "$code" >"$FIX/bin/foo"
+  {
+    printf '#!/bin/sh\necho SMOKE-STDOUT\n'
+    [[ "$code" != 0 ]] && printf 'echo SMOKE-STDERR >&2\n'
+    printf 'exit %s\n' "$code"
+  } >"$FIX/bin/foo"
   chmod +x "$FIX/bin/foo"
   echo '<html>index</html>' >"$FIX/index.html"
 }
@@ -166,18 +170,19 @@ test_smoke_runs_as_service_user() {
   assert_eq 0 $? "helper exits 0"
   local rev
   rev=$(newest_revision foo)
-  assert_contains "$RUNAS_LOG" "$SRV/foo/releases/$rev/bin/foo --help" \
-    "smoke runs bin/foo --help as the service user"
+  assert_contains "$RUNAS_LOG" "$SRV/foo/releases/$rev/bin/foo --version" \
+    "smoke runs bin/foo --version as the service user"
 }
 
-test_smoke_output_silent_on_success() {
-  t "test_smoke_output_silent_on_success"
+test_smoke_output_logged_on_success() {
+  t "test_smoke_output_logged_on_success"
   setup_env
   mk_fixture
   "$HELPER" foo "$FIX" 3 >/dev/null 2>&1
   assert_eq 0 $? "helper exits 0"
-  assert_not_contains "$LOG_FILE" "SMOKE-STDOUT" "smoke output discarded on success"
-  assert_not_contains "$LOG_FILE" "SMOKE-STDERR" "smoke errors discarded on success"
+  assert_contains "$LOG_FILE" "smoke output:" "smoke output section is logged"
+  assert_contains "$LOG_FILE" "SMOKE-STDOUT" "smoke stdout logged on success"
+  assert_not_contains "$LOG_FILE" "SMOKE-STDERR" "smoke errors not logged on success"
 }
 
 test_smoke_failure_shows_output() {
@@ -266,7 +271,7 @@ test_name_validation() {
 
 test_install_new_release
 test_smoke_runs_as_service_user
-test_smoke_output_silent_on_success
+test_smoke_output_logged_on_success
 test_smoke_failure_aborts
 test_smoke_failure_shows_output
 test_retention_never_deletes_current

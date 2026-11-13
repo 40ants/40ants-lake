@@ -4,7 +4,7 @@
 # Usage:
 #   install-release <name> <src-dir> [keep]
 #       Install a new revision (named by UTC time of installation),
-#       run the smoke test as the service user, atomically flip
+#       run the smoke test (--version) as the service user, atomically flip
 #       `current`, daemon-reload + restart, prune old revisions.
 #   install-release --switch <name> <rev>
 #       Roll back: flip `current` to an existing revision and restart.
@@ -136,9 +136,9 @@ cmd_install() {
   find "$target" -type f -exec chmod 0644 {} +
   chmod 0755 "$target/bin/$name"
 
-  log "smoke: bin/$name --help as user $name"
-  # Output of the smoke run is discarded on success (a successful --help
-  # produces usage text nobody needs to see) and shown only on failure.
+  log "smoke: bin/$name --version as user $name"
+  # The smoke runs --version: it proves the binary starts under the service
+  # user and prints the installed version right into the deploy log.
   # HOME is set explicitly: system users have home /nonexistent, and a CCL
   # binary warns "cannot find home directory" when HOME does not resolve.
   local smoke_home="$srv/data"
@@ -146,7 +146,7 @@ cmd_install() {
   local smoke_out
   smoke_out=$(mktemp)
   if ! as_service_user "$name" env HOME="$smoke_home" \
-      "$target/bin/$name" --help >"$smoke_out" 2>&1; then
+      "$target/bin/$name" --version >"$smoke_out" 2>&1; then
     log "smoke failed; removing revision $rev; current is untouched"
     log "smoke output:"
     cat "$smoke_out" >>"$LOG_FILE"
@@ -154,6 +154,8 @@ cmd_install() {
     rm -rf "$target"
     die "Smoke test failed for revision $rev"
   fi
+  log "smoke output:"
+  cat "$smoke_out" >>"$LOG_FILE"
   rm -f "$smoke_out"
 
   flip_current "$srv" "$rev"
