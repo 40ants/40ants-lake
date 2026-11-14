@@ -133,9 +133,10 @@ the restart[prod] target afterwards."
 (defun deploy-app (app)
   "Deploy a single APP and return the deploy mode used.
 
-Apps with build.lisp are installed as /srv/services releases via the
-install-release helper; apps without it fall back to the legacy roswell
-binary copying. Remote targets are not supported yet."
+Apps of the Deploy tract (marked by a build.lisp in the project root,
+built via the 40ants-builder library) are installed as /srv/services
+releases via the install-release helper; apps without it fall back to
+the legacy roswell binary copying. Remote targets are not supported yet."
   (when (app-target-host app)
     (error "Remote deploy is not supported yet"))
   (if (uses-build-lisp-p (uiop:getcwd))

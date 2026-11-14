@@ -9,6 +9,8 @@
                               "ASDF"
                               "REPL"
                               "HTTP"))
+  (0.4.0 2026-11-14
+         "* `lake build` of the Deploy tract projects (those with `build.lisp`) now runs the `40ants-builder` library instead of loading `build.lisp`: it executes `qlot exec ros -L <lisp> run` with the `(ql:quickload :40ants-builder)` and `(40ants-builder:build :<name>)` eval forms, where `<name>` is the app name used as the ASDF system designator. The builder registers the project's local systems, pins the built system's ASDF version with the git commit, and quits the process explicitly, which keeps the CCL behavior (no `--non-interactive` flag there) unchanged. The `build.lisp` file itself remains the tract marker and is not executed anymore.")
   (0.3.1 2026-11-04
          "* Added `lisp` app slot (default `sbcl-bin`): the Roswell `-L` spec used by `lake build` and `lake to-prod`; any spec accepted by `ros run -L` works, e.g. `ccl-bin/1.13` or a pinned `sbcl-bin/2.5.9`. The `sbcl-pin` slot was removed — pass its value as `:lisp`.
          * `lake to-prod` invokes the `install-release` helper from the 40ants-lake checkout instead of a host-wide copy in `/usr/local/sbin`; the copy and the sudoers rule are no longer needed.

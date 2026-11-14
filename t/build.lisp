@@ -6,11 +6,11 @@
 
 (deftest release-build-command
   (testing "Default lisp spec is sbcl-bin"
-    (ok (string= "qlot exec ros -L sbcl-bin run -- --non-interactive --load build.lisp"
+    (ok (string= "qlot exec ros -L sbcl-bin run -- --non-interactive --eval '(ql:quickload :40ants-builder)' --eval '(40ants-builder:build :foo)'"
                  (40ants-lake/app:release-build-command
                   (40ants-lake/app:app "foo")))))
   (testing "Any spec accepted by ros run -L can be given"
-    (ok (string= "qlot exec ros -L ccl-bin/1.13 run -- --load build.lisp"
+    (ok (string= "qlot exec ros -L ccl-bin/1.13 run -- --eval '(ql:quickload :40ants-builder)' --eval '(40ants-builder:build :foo)'"
                  (40ants-lake/app:release-build-command
                   (40ants-lake/app:app "foo" :lisp "ccl-bin/1.13")))))
   (testing "CCL gets no --non-interactive, which it rejects as an unknown option"
@@ -18,11 +18,11 @@
                      (40ants-lake/app:release-build-command
                       (40ants-lake/app:app "foo" :lisp "ccl-bin"))))))
   (testing "A pinned spec is passed as is"
-    (ok (string= "qlot exec ros -L sbcl-bin/2.5.9 run -- --non-interactive --load build.lisp"
+    (ok (string= "qlot exec ros -L sbcl-bin/2.5.9 run -- --non-interactive --eval '(ql:quickload :40ants-builder)' --eval '(40ants-builder:build :foo)'"
                  (40ants-lake/app:release-build-command
                   (40ants-lake/app:app "foo" :lisp "sbcl-bin/2.5.9")))))
   (testing "NIL lisp omits -L and uses Roswell's default Lisp"
-    (ok (string= "qlot exec ros run -- --non-interactive --load build.lisp"
+    (ok (string= "qlot exec ros run -- --non-interactive --eval '(ql:quickload :40ants-builder)' --eval '(40ants-builder:build :foo)'"
                  (40ants-lake/app:release-build-command
                   (40ants-lake/app:app "foo" :lisp nil))))))
 

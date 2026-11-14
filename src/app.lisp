@@ -88,33 +88,52 @@
 
 (-> release-build-command (app) (values string &optional))
 (defun release-build-command (app)
-  "Return the command building the release via the project's build.lisp.
+  "Return the command building the release via the 40ants-builder library.
 
-build.lisp itself knows the project to build. The Lisp is passed to
-Roswell with -L, taken from the LISP slot (\"sbcl-bin\" by default).
-Any spec accepted by `ros run -L` works, for example \"ccl-bin/1.13\"
-or a pinned \"sbcl-bin/2.5.9\". When the slot is NIL, no -L argument
-is given and Roswell picks its default Lisp.
+A fresh Roswell process runs in the project's Qlot environment: it
+quickloads the builder and calls `(40ants-builder:build :<name>)`,
+where the name is the app's name used as the ASDF system designator.
+The builder registers the project's local systems, applies the CCL
+and ECL workarounds, pins the build identification (the system's ASDF
+version plus the git commit) and dumps the binary via Deploy. The
+project's build.lisp, which marked this tract before, is not executed
+anymore.
+
+The Lisp is passed to Roswell with -L, taken from the LISP slot
+(\"sbcl-bin\" by default). Any spec accepted by `ros run -L` works,
+for example \"ccl-bin/1.13\" or a pinned \"sbcl-bin/2.5.9\". When the
+slot is NIL, no -L argument is given and Roswell picks its default
+Lisp.
 
 Roswell forwards everything after -- to the implementation's own
 command line, and those flags are implementation specific:
---non-interactive exists on SBCL, while CCL rejects it with
-\"Unknown option\" and gets only --load. That is safe because
-build.lisp quits the process explicitly both on success and failure."
-  (let ((lisp-spec (app-lisp app)))
+`--non-interactive` exists on SBCL, while CCL rejects it with
+\"Unknown option\" and gets only the eval forms. That is safe because
+the builder quits the process explicitly both on success and failure."
+  (let ((lisp-spec (app-lisp app))
+        (evals (format nil
+                       "--eval '(ql:quickload :40ants-builder)' --eval '(40ants-builder:build :~A)'"
+                       (app-name app))))
     (cond ((null lisp-spec)
-           "qlot exec ros run -- --non-interactive --load build.lisp")
+           (format nil "qlot exec ros run -- --non-interactive ~A"
+                   evals))
           ((uiop:string-prefix-p "ccl" lisp-spec)
-           (format nil "qlot exec ros -L ~A run -- --load build.lisp"
-                   lisp-spec))
+           (format nil "qlot exec ros -L ~A run -- ~A"
+                   lisp-spec evals))
           (t
-           (format nil "qlot exec ros -L ~A run -- --non-interactive --load build.lisp"
-                   lisp-spec)))))
+           (format nil "qlot exec ros -L ~A run -- --non-interactive ~A"
+                   lisp-spec evals)))))
 
 
 (-> uses-build-lisp-p ((or pathname string null)) (values boolean &optional))
 (defun uses-build-lisp-p (root)
-  "Return T when ROOT contains a build.lisp (the Deploy convention).
+  "Return T when ROOT contains a build.lisp.
+
+The file marks the project as using the Deploy tract: such projects
+are built through the 40ants-builder library by lake build and
+installed as /srv/services releases by lake to-prod. The file itself
+is not executed anymore; it only serves as the tract marker, kept for
+backward compatibility.
 
 Projects without build.lisp keep using the legacy roswell/<name>.ros build."
   (not (null (and root
