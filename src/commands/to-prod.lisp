@@ -2,6 +2,8 @@
   (:use #:cl)
   (:import-from #:serapeum
                 #:->)
+  (:import-from #:asdf
+                #:system-relative-pathname)
   (:import-from #:lake)
   (:import-from #:40ants-lake/utils
                 #:get-system-path
@@ -13,7 +15,9 @@
                 #:app-target-host
                 #:app-revisions-to-keep
                 #:app-health-check-url
+                #:bin-ready-p
                 #:build-app
+                #:builder-tract-p
                 #:uses-build-lisp-p
                 #:*apps*)
   (:import-from #:40ants-lake/release
@@ -27,20 +31,37 @@
                 #:add-prod-suffix-if-needed
                 #:with-environment)
   (:export #:install-release-command
+           #:install-release-script-path
            #:health-check-commands
            #:deploy-app))
 (in-package #:40ants-lake/commands/to-prod)
+
+
+(-> install-release-script-path () (values string &optional))
+(defun install-release-script-path ()
+  "Return the absolute path of the install-release helper shipped in the 40ants-lake checkout.
+
+The helper lives next to the lake sources and is always in sync with the
+running code; no host-wide copy in /usr/local/sbin is required."
+  (let ((path (system-relative-pathname :40ants-lake "scripts/install-release")))
+    (unless (probe-file path)
+      (error "install-release helper was not found in the 40ants-lake checkout: ~A"
+             path))
+    (namestring path)))
 
 
 (-> install-release-command (string string integer) (values string &optional))
 (defun install-release-command (name staging keep)
   "Return the command installing STAGING as a new release of the service NAME.
 
-The helper /usr/local/sbin/install-release is the single write entry point
-into /srv/services: it copies the revision, runs the smoke test as the
-service user, atomically flips `current`, restarts the service and prunes
-old revisions down to KEEP."
-  (format nil "sudo /usr/local/sbin/install-release ~A ~A ~A" name staging keep))
+The helper is the single write entry point into /srv/services: it copies
+the revision, runs the smoke test as the service user, atomically flips
+`current`, restarts the service and prunes old revisions down to KEEP."
+  (format nil "sudo ~A ~A ~A ~A"
+          (install-release-script-path)
+          name
+          staging
+          keep))
 
 
 (-> health-check-commands (app) (values list &optional))
@@ -57,11 +78,20 @@ also a curl returning the HTTP code (000 means nothing is listening)."
 
 (-> deploy-release (app) (values &optional))
 (defun deploy-release (app)
-  "Build APP, assemble a staging directory and install it as a new release.
+  "Release APP: build it unless bin/ already holds one, assemble a
+staging directory and install it as a new release.
+
+When BIN-READY-P is true the existing bin/ is released as-is: a binary
+built earlier, manually or by a previous 'lake build', can be deployed
+without rebuilding. Run 'lake build' to force a fresh build.
 
 The staging directory is removed after the install; the service is
 restarted by the install-release helper itself."
-  (build-app app)
+  (if (bin-ready-p)
+      (format *error-output*
+              (yellow
+               "bin/ already contains a build; releasing it as-is (rebuild with 'lake build').~%"))
+      (build-app app))
   (let ((staging (make-staging app (uiop:getcwd))))
     (unwind-protect
          (progn
@@ -104,12 +134,13 @@ the restart[prod] target afterwards."
 (defun deploy-app (app)
   "Deploy a single APP and return the deploy mode used.
 
-Apps with build.lisp are installed as /srv/services releases via the
-install-release helper; apps without it fall back to the legacy roswell
-binary copying. Remote targets are not supported yet."
+Apps of the Deploy tract (marked by a build.lisp in the project root,
+built via the 40ants-builder library) are installed as /srv/services
+releases via the install-release helper; apps without it fall back to
+the legacy roswell binary copying. Remote targets are not supported yet."
   (when (app-target-host app)
     (error "Remote deploy is not supported yet"))
-  (if (uses-build-lisp-p (uiop:getcwd))
+  (if (builder-tract-p app (uiop:getcwd))
       (progn (deploy-release app) :release)
       (progn (deploy-legacy app) :legacy)))
 

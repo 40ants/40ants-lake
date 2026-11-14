@@ -7,9 +7,14 @@
 
 
 (deftest install-release-command-format
-  (ok (string= "sudo /usr/local/sbin/install-release pingvito /tmp/staging-123 5"
-               (40ants-lake/commands/to-prod:install-release-command
-                "pingvito" "/tmp/staging-123" 5))))
+  (let ((script-path (40ants-lake/commands/to-prod:install-release-script-path)))
+    (ok (probe-file script-path)
+        "install-release helper ships with the checkout")
+    (ok (string= (format nil "sudo ~A pingvito /tmp/staging-123 5"
+                         script-path)
+                 (40ants-lake/commands/to-prod:install-release-command
+                  "pingvito" "/tmp/staging-123" 5))
+        "command invokes the helper via sudo using the checkout path")))
 
 
 (deftest health-check-commands-with-url

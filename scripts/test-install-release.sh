@@ -46,6 +46,15 @@ assert_contains() {
   fi
 }
 
+assert_not_contains() {
+  # assert_not_contains <file> <needle> <label>
+  if [[ -f "$1" ]] && grep -qF -- "$2" "$1"; then
+    fail "$3 (unexpected '$2' in $1)"
+  else
+    pass "$3"
+  fi
+}
+
 assert_exists() {
   if [[ -e "$1" ]]; then
     pass "$2"
@@ -105,10 +114,15 @@ setup_env() {
 }
 
 mk_fixture() {
-  # mk_fixture [smoke-exit-code]
+  # mk_fixture [smoke-exit-code] — emits a marker on stdout; when failing,
+  # also emits a marker on stderr so tests can assert where output ends up.
   local code="${1:-0}"
   mkdir -p "$FIX/bin"
-  printf '#!/bin/sh\nexit %s\n' "$code" >"$FIX/bin/foo"
+  {
+    printf '#!/bin/sh\necho SMOKE-STDOUT\n'
+    [[ "$code" != 0 ]] && printf 'echo SMOKE-STDERR >&2\n'
+    printf 'exit %s\n' "$code"
+  } >"$FIX/bin/foo"
   chmod +x "$FIX/bin/foo"
   echo '<html>index</html>' >"$FIX/index.html"
 }
@@ -156,8 +170,31 @@ test_smoke_runs_as_service_user() {
   assert_eq 0 $? "helper exits 0"
   local rev
   rev=$(newest_revision foo)
-  assert_contains "$RUNAS_LOG" "$SRV/foo/releases/$rev/bin/foo --help" \
-    "smoke runs bin/foo --help as the service user"
+  assert_contains "$RUNAS_LOG" "$SRV/foo/releases/$rev/bin/foo --version" \
+    "smoke runs bin/foo --version as the service user"
+}
+
+test_smoke_output_logged_on_success() {
+  t "test_smoke_output_logged_on_success"
+  setup_env
+  mk_fixture
+  "$HELPER" foo "$FIX" 3 >/dev/null 2>&1
+  assert_eq 0 $? "helper exits 0"
+  assert_contains "$LOG_FILE" "smoke output:" "smoke output section is logged"
+  assert_contains "$LOG_FILE" "SMOKE-STDOUT" "smoke stdout logged on success"
+  assert_not_contains "$LOG_FILE" "SMOKE-STDERR" "smoke errors not logged on success"
+}
+
+test_smoke_failure_shows_output() {
+  t "test_smoke_failure_shows_output"
+  setup_env
+  seed_revisions foo 1
+  ln -sfn releases/20260101-000000 "$SRV/foo/current"
+  mk_fixture 1
+  assert_nonzero_exit "$HELPER" foo "$FIX" 3
+  assert_contains "$LOG_FILE" "smoke output:" "smoke output section is logged"
+  assert_contains "$LOG_FILE" "SMOKE-STDOUT" "smoke stdout shown on failure"
+  assert_contains "$LOG_FILE" "SMOKE-STDERR" "smoke stderr shown on failure"
 }
 
 test_smoke_failure_aborts() {
@@ -234,7 +271,9 @@ test_name_validation() {
 
 test_install_new_release
 test_smoke_runs_as_service_user
+test_smoke_output_logged_on_success
 test_smoke_failure_aborts
+test_smoke_failure_shows_output
 test_retention_never_deletes_current
 test_switch_rollback
 test_atomic_flip
