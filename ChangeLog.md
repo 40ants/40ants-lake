@@ -6,7 +6,8 @@
 
 ## 0.4.0 (2026-11-14)
 
-* `lake build` of the Deploy tract projects (those with `build.lisp`) now runs the `40ants-builder` library instead of loading `build.lisp`: it executes `qlot exec ros -L <lisp> run` with the `(ql:quickload :40ants-builder)` and `(40ants-builder:build :<name>)` eval forms, where `<name>` is the app name used as the `ASDF` system designator. The builder registers the project's local systems, pins the built system's `ASDF` version with the git commit, and quits the process explicitly, which keeps the `CCL` behavior (no `--non-interactive` flag there) unchanged. The `build.lisp` file itself remains the tract marker and is not executed anymore.
+* `lake build` of the Deploy tract projects now runs the `40ants-builder` library instead of loading `build.lisp`: it executes `qlot exec ros -L <lisp> run` with the `(ql:quickload :40ants-builder)` and `(40ants-builder:build :<name>)` eval forms, where `<name>` is the app name used as the `ASDF` system designator. The builder registers the project's local systems, pins the built system's `ASDF` version with the git commit, and quits the process explicitly, which keeps the `CCL` behavior (no `--non-interactive` flag there) unchanged.
+* Added the `builder` app slot: pass `:builder t` to build the app through the 40ants-builder library. The tract also turns on for backward compatibility when a `build.lisp` file is present in the project root; the file itself is not executed anymore.
 
 <a id="x-2840ANTS-LAKE-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
