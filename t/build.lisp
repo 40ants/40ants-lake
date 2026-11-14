@@ -57,3 +57,25 @@
            (with-open-file (s (merge-pathnames "build.lisp" dir) :direction :output))
            (ok (40ants-lake/app:uses-build-lisp-p dir)))
       (uiop:delete-directory-tree dir :validate t :if-does-not-exist :ignore))))
+
+
+(deftest builder-tract-p
+  (let ((dir (merge-pathnames (format nil "40ants-lake-test-~A/" (gensym ""))
+                              (uiop:temporary-directory))))
+    (ensure-directories-exist dir)
+    (unwind-protect
+         (progn
+           (testing "An app without the builder slot and without build.lisp builds via legacy roswell"
+             (ok (null (40ants-lake/app:builder-tract-p
+                        (40ants-lake/app:app "foo")
+                        dir))))
+           (testing "The builder slot turns the tract on explicitly"
+             (ok (40ants-lake/app:builder-tract-p
+                  (40ants-lake/app:app "foo" :builder t)
+                  dir)))
+           (testing "A build.lisp in the project root keeps backward compatibility"
+             (with-open-file (s (merge-pathnames "build.lisp" dir) :direction :output))
+             (ok (40ants-lake/app:builder-tract-p
+                  (40ants-lake/app:app "foo")
+                  dir))))
+      (uiop:delete-directory-tree dir :validate t :if-does-not-exist :ignore))))

@@ -17,6 +17,7 @@
                 #:app-health-check-url
                 #:bin-ready-p
                 #:build-app
+                #:builder-tract-p
                 #:uses-build-lisp-p
                 #:*apps*)
   (:import-from #:40ants-lake/release
@@ -139,7 +140,7 @@ releases via the install-release helper; apps without it fall back to
 the legacy roswell binary copying. Remote targets are not supported yet."
   (when (app-target-host app)
     (error "Remote deploy is not supported yet"))
-  (if (uses-build-lisp-p (uiop:getcwd))
+  (if (builder-tract-p app (uiop:getcwd))
       (progn (deploy-release app) :release)
       (progn (deploy-legacy app) :legacy)))
 

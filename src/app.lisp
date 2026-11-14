@@ -16,10 +16,12 @@
            #:app-release-paths
            #:app-extra-revisions
            #:app-lisp
+           #:app-builder
            #:app-health-check-url
            #:release-build-command
            #:delete-stale-artifact
            #:bin-ready-p
+           #:builder-tract-p
            #:uses-build-lisp-p
            #:legacy-build-command
            #:current-app))
@@ -61,6 +63,10 @@
          :type (or null string)
          :initform "sbcl-bin"
          :reader app-lisp)
+   (builder :initarg :builder
+            :type boolean
+            :initform nil
+            :reader app-builder)
    (health-check-url :initarg :health-check-url
                      :type (or null string)
                      :initform nil
@@ -73,6 +79,7 @@
                    (release-paths '(("bin" . "bin/")))
                    extra-revisions
                    (lisp "sbcl-bin")
+                   builder
                    health-check-url)
   (make-instance 'app
                  :name name
@@ -82,6 +89,7 @@
                  :release-paths release-paths
                  :extra-revisions extra-revisions
                  :lisp lisp
+                 :builder builder
                  :health-check-url health-check-url))
 
 
@@ -129,15 +137,23 @@ the builder quits the process explicitly both on success and failure."
 (defun uses-build-lisp-p (root)
   "Return T when ROOT contains a build.lisp.
 
-The file marks the project as using the Deploy tract: such projects
-are built through the 40ants-builder library by lake build and
-installed as /srv/services releases by lake to-prod. The file itself
-is not executed anymore; it only serves as the tract marker, kept for
-backward compatibility.
-
-Projects without build.lisp keep using the legacy roswell/<name>.ros build."
+The file was the marker of the Deploy tract back when lake executed
+it directly. It is kept for backward compatibility: projects with
+build.lisp still build through the 40ants-builder library, but the
+file itself is not executed anymore."
   (not (null (and root
                   (uiop:file-exists-p (merge-pathnames "build.lisp" root))))))
+
+
+(-> builder-tract-p (app (or pathname string null)) (values boolean &optional))
+(defun builder-tract-p (app root)
+  "Return T when APP builds through the 40ants-builder library.
+
+T is returned either when the app passes the BUILDER slot or, for
+backward compatibility, when ROOT contains a build.lisp. Other apps
+keep using the legacy roswell/<name>.ros build."
+  (or (app-builder app)
+      (uses-build-lisp-p root)))
 
 
 (-> legacy-build-command (string) (values string &optional))
@@ -191,7 +207,7 @@ unconditionally."
 
 (defgeneric build-app (app)
   (:method ((app app))
-    (if (uses-build-lisp-p (uiop:getcwd))
+    (if (builder-tract-p app (uiop:getcwd))
         (progn
           (delete-stale-artifact app)
           (lake:sh (release-build-command app)))
