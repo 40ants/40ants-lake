@@ -49,6 +49,10 @@
                                    "API"
                                    "URL"
                                    "URI"
+                                   "CCL"
+                                   "SBCL"
+                                   "ECL"
+                                   "HOME"
                                    "RPC"
                                    "GIT"))
   (40ants-lake system)
