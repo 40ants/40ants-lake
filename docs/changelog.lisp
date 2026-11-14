@@ -8,6 +8,10 @@
 (defchangelog (:ignore-words ("SLY"
                               "ASDF"
                               "REPL"
+                              "SBCL"
+                              "CCL"
+                              "ECL"
+                              "HOME"
                               "HTTP"))
   (0.4.0 2026-11-14
          "* `lake build` of the Deploy tract projects now runs the `40ants-builder` library instead of loading `build.lisp`: it executes `qlot exec ros -L <lisp> run` with the `(ql:quickload :40ants-builder)` and `(40ants-builder:build :<name>)` eval forms, where `<name>` is the app name used as the ASDF system designator. The builder registers the project's local systems, pins the built system's ASDF version with the git commit, and quits the process explicitly, which keeps the CCL behavior (no `--non-interactive` flag there) unchanged.
