@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0">
+    <channel>
+        <title>40ants-lake-docs ChangeLog</title>
+        <link>https://40ants.com/40ants-lake/</link>
+        <generator>xml-emitter</generator>
+        <language>en-us</language>
+        <item>
+            <title>0.4.0  (2026-11-14)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;lake build&lt;/code&gt; of the Deploy tract projects now runs the &lt;code&gt;40ants-builder&lt;/code&gt; library instead of loading &lt;code&gt;build.lisp&lt;/code&gt;: it executes &lt;code&gt;qlot exec ros -L &amp;lt;lisp&amp;gt; run&lt;/code&gt; with the &lt;code&gt;(ql:quickload :40ants-builder)&lt;/code&gt; and &lt;code&gt;(40ants-builder:build :&amp;lt;name&amp;gt;)&lt;/code&gt; eval forms, where &lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt; is the app name used as the &lt;code&gt;ASDF&lt;/code&gt; system designator. The builder registers the project&apos;s local systems, pins the built system&apos;s &lt;code&gt;ASDF&lt;/code&gt; version with the git commit, and quits the process explicitly, which keeps the &lt;code&gt;CCL&lt;/code&gt; behavior (no &lt;code&gt;--non-interactive&lt;/code&gt; flag there) unchanged.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Added the &lt;code&gt;builder&lt;/code&gt; app slot: pass &lt;code&gt;:builder t&lt;/code&gt; to build the app through the 40ants-builder library. The tract also turns on for backward compatibility when a &lt;code&gt;build.lisp&lt;/code&gt; file is present in the project root; the file itself is not executed anymore.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.3.1  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added &lt;code&gt;lisp&lt;/code&gt; app slot (default &lt;code&gt;sbcl-bin&lt;/code&gt;): the Roswell &lt;code&gt;-L&lt;/code&gt; spec used by &lt;code&gt;lake build&lt;/code&gt; and &lt;code&gt;lake to-prod&lt;/code&gt;; any spec accepted by &lt;code&gt;ros run -L&lt;/code&gt; works, e.g. &lt;code&gt;ccl-bin/1.13&lt;/code&gt; or a pinned &lt;code&gt;sbcl-bin/2.5.9&lt;/code&gt;. The &lt;code&gt;sbcl-pin&lt;/code&gt; slot was removed — pass its value as &lt;code&gt;:lisp&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;lake to-prod&lt;/code&gt; invokes the &lt;code&gt;install-release&lt;/code&gt; helper from the 40ants-lake checkout instead of a host-wide copy in &lt;code&gt;/usr/local/sbin&lt;/code&gt;; the copy and the sudoers rule are no longer needed.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;lake build&lt;/code&gt; and &lt;code&gt;lake to-prod&lt;/code&gt; no longer pass &lt;code&gt;--non-interactive&lt;/code&gt; when building with &lt;code&gt;CCL&lt;/code&gt;: the flag is &lt;code&gt;SBCL&lt;/code&gt; specific and &lt;code&gt;CCL&lt;/code&gt; rejects it with &lt;code&gt;Unknown option&lt;/code&gt;; &lt;code&gt;CCL&lt;/code&gt; builds rely on build.lisp quitting the process explicitly.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;lake build&lt;/code&gt; deletes the previous &lt;code&gt;bin/&amp;lt;name&amp;gt;&lt;/code&gt; artifact before building: &lt;code&gt;ASDF&lt;/code&gt; skips deploy-op when its output is newer than the inputs, which silently kept the stale binary after switching the &lt;code&gt;lisp&lt;/code&gt; slot from one implementation to another.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The smoke test runs with an explicit valid &lt;code&gt;HOME&lt;/code&gt; (the service &lt;code&gt;data/&lt;/code&gt; directory): system users have home &lt;code&gt;/nonexistent&lt;/code&gt;, and &lt;code&gt;CCL&lt;/code&gt; binaries warned &lt;code&gt;cannot find home directory&lt;/code&gt; on every smoke run.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.3.0  (2026-10-27)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added deploy slots to &lt;code&gt;app&lt;/code&gt;: &lt;code&gt;target-host&lt;/code&gt;, &lt;code&gt;revisions-to-keep&lt;/code&gt;, &lt;code&gt;release-paths&lt;/code&gt;, &lt;code&gt;extra-revisions&lt;/code&gt;, &lt;code&gt;sbcl-pin&lt;/code&gt;, &lt;code&gt;health-check-url&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;lake build&lt;/code&gt; builds via the project&apos;s &lt;code&gt;build.lisp&lt;/code&gt; when present, otherwise falls back to the legacy &lt;code&gt;roswell/&amp;lt;name&amp;gt;.ros&lt;/code&gt; build.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Added release staging assembly; staging directories are created atomically and unique across processes (mktemp -d).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;lake to-prod&lt;/code&gt; installs releases via the &lt;code&gt;/usr/local/sbin/install-release&lt;/code&gt; helper into &lt;code&gt;/srv/services/&amp;lt;name&amp;gt;/releases/&lt;/code&gt; with atomic &lt;code&gt;current&lt;/code&gt; flip, retention and a health check; legacy roswell copying remains for projects without &lt;code&gt;build.lisp&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Tue, 27 Oct 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.2.0  (2026-02-02)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added command dbdump-schema.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.1.0  (2024-09-02)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Initial version.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+        </item>
+    </channel>
+</rss>
