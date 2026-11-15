@@ -9,6 +9,7 @@
   :pathname "t"
   :depends-on ("40ants-lake-tests/core"
                "40ants-lake-tests/app"
+               "40ants-lake-tests/db"
                "40ants-lake-tests/build"
                "40ants-lake-tests/release"
                "40ants-lake-tests/to-prod")

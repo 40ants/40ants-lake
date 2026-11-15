@@ -4,15 +4,10 @@
 		#:sh)
   (:import-from #:serapeum
 		#:fmt)
-  (:import-from #:cl-ansi-text
-                #:green)
   (:import-from #:40ants-lake/app
-                #:*apps*
-                #:app-name
-                #:build-app)
-  (:import-from #:40ants-lake/errors
-                #:lake-error)
-  (:import-from #:40ants-lake/commands/dbshell
+                #:*apps*)
+  (:import-from #:40ants-lake/commands/db
+                #:ensure-db-connection-env
                 #:get-pg-conn-string))
 (in-package #:40ants-lake/commands/dbdump)
 
@@ -29,29 +24,21 @@
   (uiop:with-output-file (stream "/proc/self/comm" :if-exists :overwrite)
     (cl:write-string "sbcl-dbdump"
          	     stream))
-  (cond
-    ((probe-file ".local-config.lisp")
-     (load ".local-config.lisp")
-     
-     (let ((command (fmt "~A -s -f schema.sql --exclude-schema _timescaledb_internal ~A"
-                         (get-dump-command)
-                         (get-pg-conn-string))))
-       (sh command)))
-    (t
-     (lake-error "There is no file .local-config.lisp"))))
+
+  (ensure-db-connection-env (first *apps*))
+  (let ((command (fmt "~A -s -f schema.sql --exclude-schema _timescaledb_internal ~A"
+                      (get-dump-command)
+                      (get-pg-conn-string))))
+    (sh command)))
 
 
 (lake:task "dbdump-backup" ()
   (uiop:with-output-file (stream "/proc/self/comm" :if-exists :overwrite)
     (cl:write-string "sbcl-dbdump"
          	     stream))
-  (cond
-    ((probe-file ".local-config.lisp")
-     (load ".local-config.lisp")
-     
-     (let ((command (fmt "~A -f db/backup.dump -Fd schema.sql ~A"
-                         (get-dump-command)
-                         (get-pg-conn-string))))
-       (sh command)))
-    (t
-     (lake-error "There is no file .local-config.lisp"))))
+
+  (ensure-db-connection-env (first *apps*))
+  (let ((command (fmt "mkdir -p db && ~A -f db/backup.dump -Fd ~A"
+                      (get-dump-command)
+                      (get-pg-conn-string))))
+    (sh command)))
