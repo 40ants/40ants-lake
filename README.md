@@ -346,7 +346,7 @@ Check the build output for documentation warnings before you use the generated f
 
 <a id="x-28-23A-28-2815-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FAPP-22-29-20PACKAGE-29"></a>
 
-#### [package](2804) `40ants-lake/app`
+#### [package](f027) `40ants-lake/app`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FAPP-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -358,45 +358,45 @@ Check the build output for documentation warnings before you use the generated f
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-20CLASS-29"></a>
 
-###### [class](7e0f) `40ants-lake/app:app` ()
+###### [class](871f) `40ants-lake/app:app` ()
 
 **Readers**
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-BUILDER-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](34df) `40ants-lake/app:app-builder` (app) (:builder = nil)
+###### [reader](5f19) `40ants-lake/app:app-builder` (app) (:builder = nil)
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-COMPONENTS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](f1b0) `40ants-lake/app:app-components` (app) (:components)
+###### [reader](813e) `40ants-lake/app:app-components` (app) (:components)
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-EXTRA-REVISIONS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](e344) `40ants-lake/app:app-extra-revisions` (app) (:extra-revisions = nil)
+###### [reader](3757) `40ants-lake/app:app-extra-revisions` (app) (:extra-revisions = nil)
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-HEALTH-CHECK-URL-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](14fa) `40ants-lake/app:app-health-check-url` (app) (:health-check-url = nil)
+###### [reader](f602) `40ants-lake/app:app-health-check-url` (app) (:health-check-url = nil)
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-LISP-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](37f7) `40ants-lake/app:app-lisp` (app) (:LISP = "sbcl-bin")
+###### [reader](8648) `40ants-lake/app:app-lisp` (app) (:LISP = "sbcl-bin")
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-NAME-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](10d8) `40ants-lake/app:app-name` (app) (:name)
+###### [reader](1eb2) `40ants-lake/app:app-name` (app) (:name)
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-RELEASE-PATHS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](aa4a) `40ants-lake/app:app-release-paths` (app) (:RELEASE-PATHS = '(("bin" . "bin/")))
+###### [reader](ab83) `40ants-lake/app:app-release-paths` (app) (:RELEASE-PATHS = '(("bin" . "bin/")))
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-REVISIONS-TO-KEEP-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](86fc) `40ants-lake/app:app-revisions-to-keep` (app) (:revisions-to-keep = 3)
+###### [reader](7f3c) `40ants-lake/app:app-revisions-to-keep` (app) (:revisions-to-keep = 3)
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-TARGET-HOST-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29"></a>
 
-###### [reader](cfce) `40ants-lake/app:app-target-host` (app) (:target-host = nil)
+###### [reader](c775) `40ants-lake/app:app-target-host` (app) (:target-host = nil)
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FAPP-3FGenerics-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -404,7 +404,7 @@ Check the build output for documentation warnings before you use the generated f
 
 <a id="x-2840ANTS-LAKE-2FAPP-3ABUILD-APP-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](9669) `40ants-lake/app:build-app` app
+##### [generic-function](b42e) `40ants-lake/app:build-app` app
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FAPP-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -412,11 +412,11 @@ Check the build output for documentation warnings before you use the generated f
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AAPP-20FUNCTION-29"></a>
 
-##### [function](abf8) `40ants-lake/app:app` NAME &KEY COMPONENTS TARGET-HOST (REVISIONS-TO-KEEP 3) (RELEASE-PATHS '(("bin" . "bin/"))) EXTRA-REVISIONS (LISP "sbcl-bin") BUILDER HEALTH-CHECK-URL
+##### [function](2323) `40ants-lake/app:app` NAME &KEY COMPONENTS TARGET-HOST (REVISIONS-TO-KEEP 3) (RELEASE-PATHS '(("bin" . "bin/"))) EXTRA-REVISIONS (LISP "sbcl-bin") BUILDER HEALTH-CHECK-URL
 
 <a id="x-2840ANTS-LAKE-2FAPP-3ABIN-READY-P-20FUNCTION-29"></a>
 
-##### [function](3828) `40ants-lake/app:bin-ready-p` &optional (root (uiop/os:getcwd))
+##### [function](1b73) `40ants-lake/app:bin-ready-p` &optional (root (uiop/os:getcwd))
 
 Return T when `ROOT`/bin holds a build that can be released as-is.
 
@@ -429,7 +429,7 @@ unconditionally.
 
 <a id="x-2840ANTS-LAKE-2FAPP-3ABUILDER-TRACT-P-20FUNCTION-29"></a>
 
-##### [function](0337) `40ants-lake/app:builder-tract-p` app root
+##### [function](5845) `40ants-lake/app:builder-tract-p` app root
 
 Return T when `APP` builds through the 40ants-builder library.
 
@@ -439,11 +439,11 @@ keep using the legacy roswell/<name>.ros build.
 
 <a id="x-2840ANTS-LAKE-2FAPP-3ACURRENT-APP-20FUNCTION-29"></a>
 
-##### [function](405f) `40ants-lake/app:current-app`
+##### [function](9542) `40ants-lake/app:current-app`
 
 <a id="x-2840ANTS-LAKE-2FAPP-3ADELETE-STALE-ARTIFACT-20FUNCTION-29"></a>
 
-##### [function](1674) `40ants-lake/app:delete-stale-artifact` app
+##### [function](d039) `40ants-lake/app:delete-stale-artifact` app
 
 Delete the previous bin/<name> artifact, if any.
 
@@ -454,13 +454,13 @@ one implementation to another.
 
 <a id="x-2840ANTS-LAKE-2FAPP-3ALEGACY-BUILD-COMMAND-20FUNCTION-29"></a>
 
-##### [function](b92a) `40ants-lake/app:legacy-build-command` name
+##### [function](2b9d) `40ants-lake/app:legacy-build-command` name
 
 Return the legacy build command for projects without build.lisp.
 
 <a id="x-2840ANTS-LAKE-2FAPP-3ARELEASE-BUILD-COMMAND-20FUNCTION-29"></a>
 
-##### [function](6b6e) `40ants-lake/app:release-build-command` app
+##### [function](59b7) `40ants-lake/app:release-build-command` app
 
 Return the command building the release via the 40ants-builder library.
 
@@ -487,7 +487,7 @@ the builder quits the process explicitly both on success and failure.
 
 <a id="x-2840ANTS-LAKE-2FAPP-3AUSES-BUILD-LISP-P-20FUNCTION-29"></a>
 
-##### [function](9ccc) `40ants-lake/app:uses-build-lisp-p` root
+##### [function](23a0) `40ants-lake/app:uses-build-lisp-p` root
 
 Return T when `ROOT` contains a build.lisp.
 
@@ -502,7 +502,7 @@ file itself is not executed anymore.
 
 <a id="x-2840ANTS-LAKE-2FAPP-3ADEFAPPS-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](b940) `40ants-lake/app:defapps` &body apps
+##### [macro](8dc8) `40ants-lake/app:defapps` &body apps
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FCOMMANDS-2FDB-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -510,7 +510,7 @@ file itself is not executed anymore.
 
 <a id="x-28-23A-28-2823-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FCOMMANDS-2FDB-22-29-20PACKAGE-29"></a>
 
-#### [package](b0c1) `40ants-lake/commands/db`
+#### [package](8001) `40ants-lake/commands/db`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FCOMMANDS-2FDB-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -518,22 +518,22 @@ file itself is not executed anymore.
 
 <a id="x-2840ANTS-LAKE-2FCOMMANDS-2FDB-3AENSURE-DB-CONNECTION-ENV-20FUNCTION-29"></a>
 
-##### [function](3180) `40ants-lake/commands/db:ensure-db-connection-env` app
+##### [function](fe4b) `40ants-lake/commands/db:ensure-db-connection-env` app
 
 Prepare the process environment for a psql/pg_dump connection.
 
 Sources in priority order:
 1. `.local-config.lisp` in the project root (it sets `DB`_* variables itself).
 2. `/srv/services/<name>/config/service.env` of the deployed service.
-Signals a `lake-error` ([`1`][6605] [`2`][460f]) when neither source is available.
+Signals a `lake-error` ([`1`][d96a] [`2`][cd1c]) when neither source is available.
 
 <a id="x-2840ANTS-LAKE-2FCOMMANDS-2FDB-3AGET-PG-CONN-STRING-20FUNCTION-29"></a>
 
-##### [function](4605) `40ants-lake/commands/db:get-pg-conn-string`
+##### [function](31eb) `40ants-lake/commands/db:get-pg-conn-string`
 
 <a id="x-2840ANTS-LAKE-2FCOMMANDS-2FDB-3ASERVICE-ENV-PATH-20FUNCTION-29"></a>
 
-##### [function](e8f5) `40ants-lake/commands/db:service-env-path` app
+##### [function](e4f4) `40ants-lake/commands/db:service-env-path` app
 
 Path to the deployed service's environment file, readable by group art.
 
@@ -543,7 +543,7 @@ Path to the deployed service's environment file, readable by group art.
 
 <a id="x-28-23A-28-2828-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FCOMMANDS-2FTO-PROD-22-29-20PACKAGE-29"></a>
 
-#### [package](97ae) `40ants-lake/commands/to-prod`
+#### [package](74c7) `40ants-lake/commands/to-prod`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FCOMMANDS-2FTO-PROD-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -551,7 +551,7 @@ Path to the deployed service's environment file, readable by group art.
 
 <a id="x-2840ANTS-LAKE-2FCOMMANDS-2FTO-PROD-3ADEPLOY-APP-20FUNCTION-29"></a>
 
-##### [function](a16c) `40ants-lake/commands/to-prod:deploy-app` app
+##### [function](268c) `40ants-lake/commands/to-prod:deploy-app` app
 
 Deploy a single `APP` and return the deploy mode used.
 
@@ -562,16 +562,16 @@ the legacy roswell binary copying. Remote targets are not supported yet.
 
 <a id="x-2840ANTS-LAKE-2FCOMMANDS-2FTO-PROD-3AHEALTH-CHECK-COMMANDS-20FUNCTION-29"></a>
 
-##### [function](5cb8) `40ants-lake/commands/to-prod:health-check-commands` app
+##### [function](b8e9) `40ants-lake/commands/to-prod:health-check-commands` app
 
 Return shell commands verifying that the service of `APP` is alive.
 
-Always includes `systemctl is-active`; when [`app-health-check-url`][f5e3] is set,
+Always includes `systemctl is-active`; when [`app-health-check-url`][529f] is set,
 also a curl returning the `HTTP` code (000 means nothing is listening).
 
 <a id="x-2840ANTS-LAKE-2FCOMMANDS-2FTO-PROD-3AINSTALL-RELEASE-COMMAND-20FUNCTION-29"></a>
 
-##### [function](e798) `40ants-lake/commands/to-prod:install-release-command` name staging keep
+##### [function](60a7) `40ants-lake/commands/to-prod:install-release-command` name staging keep
 
 Return the command installing `STAGING` as a new release of the service `NAME`.
 
@@ -581,7 +581,7 @@ the revision, runs the smoke test as the service user, atomically flips
 
 <a id="x-2840ANTS-LAKE-2FCOMMANDS-2FTO-PROD-3AINSTALL-RELEASE-SCRIPT-PATH-20FUNCTION-29"></a>
 
-##### [function](a707) `40ants-lake/commands/to-prod:install-release-script-path`
+##### [function](be21) `40ants-lake/commands/to-prod:install-release-script-path`
 
 Return the absolute path of the install-release helper shipped in the 40ants-lake checkout.
 
@@ -594,7 +594,7 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-28-23A-28-2828-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FCOMPONENT-2FDAEMON-22-29-20PACKAGE-29"></a>
 
-#### [package](14ff) `40ants-lake/component/daemon`
+#### [package](f113) `40ants-lake/component/daemon`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FCOMPONENT-2FDAEMON-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -606,17 +606,17 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FDAEMON-3ADAEMON-20CLASS-29"></a>
 
-###### [class](5f1a) `40ants-lake/component/daemon:daemon` ()
+###### [class](f4c1) `40ants-lake/component/daemon:daemon` ()
 
 **Readers**
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FDAEMON-3ADAEMON-ENVIRONMENT-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCOMPONENT-2FDAEMON-3ADAEMON-29-29"></a>
 
-###### [reader](3cba) `40ants-lake/component/daemon:daemon-environment` (daemon) (:environment = nil)
+###### [reader](7613) `40ants-lake/component/daemon:daemon-environment` (daemon) (:environment = nil)
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FDAEMON-3ADAEMON-USER-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCOMPONENT-2FDAEMON-3ADAEMON-29-29"></a>
 
-###### [reader](e110) `40ants-lake/component/daemon:daemon-user` (daemon) (:USER = "root")
+###### [reader](adb8) `40ants-lake/component/daemon:daemon-user` (daemon) (:USER = "root")
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FCOMPONENT-2FDAEMON-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -624,11 +624,11 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FDAEMON-3ADAEMON-20FUNCTION-29"></a>
 
-##### [function](2fbc) `40ants-lake/component/daemon:daemon` &KEY ENVIRONMENT (USER (OR (UIOP/OS:GETENV "USER") "root"))
+##### [function](4c85) `40ants-lake/component/daemon:daemon` &KEY ENVIRONMENT (USER (OR (UIOP/OS:GETENV "USER") "root"))
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FDAEMON-3AHAS-DAEMON-COMPONENT-P-20FUNCTION-29"></a>
 
-##### [function](d712) `40ants-lake/component/daemon:has-daemon-component-p` app
+##### [function](a3b9) `40ants-lake/component/daemon:has-daemon-component-p` app
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -636,7 +636,7 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-28-23A-28-2832-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-22-29-20PACKAGE-29"></a>
 
-#### [package](5eaf) `40ants-lake/component/webservice`
+#### [package](502e) `40ants-lake/component/webservice`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -648,17 +648,17 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3APROXY-20CLASS-29"></a>
 
-###### [class](26ad) `40ants-lake/component/webservice:proxy` (route)
+###### [class](97b5) `40ants-lake/component/webservice:proxy` (route)
 
 **Readers**
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3ABACKEND-HOST-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3APROXY-29-29"></a>
 
-###### [reader](1b27) `40ants-lake/component/webservice:backend-host` (proxy) (:HOST = "localhost")
+###### [reader](a743) `40ants-lake/component/webservice:backend-host` (proxy) (:HOST = "localhost")
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3ABACKEND-PORT-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3APROXY-29-29"></a>
 
-###### [reader](9eb9) `40ants-lake/component/webservice:backend-port` (proxy) (:port = (required-argument :port))
+###### [reader](7f6e) `40ants-lake/component/webservice:backend-port` (proxy) (:port = (required-argument :port))
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-24ROUTE-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -666,13 +666,13 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AROUTE-20CLASS-29"></a>
 
-###### [class](ebf3) `40ants-lake/component/webservice:route` ()
+###### [class](57a0) `40ants-lake/component/webservice:route` ()
 
 **Readers**
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AURL-PREFIX-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AROUTE-29-29"></a>
 
-###### [reader](9b60) `40ants-lake/component/webservice:url-prefix` (route) (:url-prefix = (required-argument :url-prefix))
+###### [reader](baca) `40ants-lake/component/webservice:url-prefix` (route) (:url-prefix = (required-argument :url-prefix))
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-24WEBSERVICE-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -680,17 +680,17 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AWEBSERVICE-20CLASS-29"></a>
 
-###### [class](d48c) `40ants-lake/component/webservice:webservice` ()
+###### [class](de49) `40ants-lake/component/webservice:webservice` ()
 
 **Readers**
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AWEBSERVICE-HOST-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AWEBSERVICE-29-29"></a>
 
-###### [reader](0fb8) `40ants-lake/component/webservice:webservice-host` (webservice) (:host)
+###### [reader](6127) `40ants-lake/component/webservice:webservice-host` (webservice) (:host)
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AWEBSERVICE-ROUTES-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AWEBSERVICE-29-29"></a>
 
-###### [reader](3f94) `40ants-lake/component/webservice:webservice-routes` (webservice) (:routes)
+###### [reader](f8db) `40ants-lake/component/webservice:webservice-routes` (webservice) (:routes)
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -698,11 +698,11 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3APROXY-20FUNCTION-29"></a>
 
-##### [function](757f) `40ants-lake/component/webservice:proxy` URL-PREFIX PORT &KEY (HOST "localhost")
+##### [function](5f97) `40ants-lake/component/webservice:proxy` URL-PREFIX PORT &KEY (HOST "localhost")
 
 <a id="x-2840ANTS-LAKE-2FCOMPONENT-2FWEBSERVICE-3AWEBSERVICE-20FUNCTION-29"></a>
 
-##### [function](24ec) `40ants-lake/component/webservice:webservice` host &key routes
+##### [function](9bae) `40ants-lake/component/webservice:webservice` host &key routes
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -710,7 +710,7 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-28-23A-28-2834-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-22-29-20PACKAGE-29"></a>
 
-#### [package](2e98) `40ants-lake/configs/install-config`
+#### [package](60ac) `40ants-lake/configs/install-config`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -722,47 +722,47 @@ running code; no host-wide copy in /usr/local/sbin is required.
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-20CLASS-29"></a>
 
-###### [class](bc1f) `40ants-lake/configs/install-config:install-config` ()
+###### [class](419b) `40ants-lake/configs/install-config:install-config` ()
 
 **Readers**
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3ACHECK-FUNC-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-29-29"></a>
 
-###### [reader](2b48) `40ants-lake/configs/install-config:check-func` (install-config) (:check-func = nil)
+###### [reader](2664) `40ants-lake/configs/install-config:check-func` (install-config) (:check-func = nil)
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3ACHMOD-TO-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-29-29"></a>
 
-###### [reader](07b0) `40ants-lake/configs/install-config:chmod-to` (install-config) (:chmod = \*default-chmod\*)
+###### [reader](38b2) `40ants-lake/configs/install-config:chmod-to` (install-config) (:chmod = \*default-chmod\*)
 
 A mask like 600 to chmod file after creation. If not given, it will be 600
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3ACHOWN-TO-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-29-29"></a>
 
-###### [reader](0526) `40ants-lake/configs/install-config:chown-to` (install-config) (:chown)
+###### [reader](54e2) `40ants-lake/configs/install-config:chown-to` (install-config) (:chown)
 
 A user:group to chown file to. If not given, then it will belong current user.
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AON-UPDATE-FUNC-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-29-29"></a>
 
-###### [reader](1c51) `40ants-lake/configs/install-config:on-update-func` (install-config) (:on-update-func = nil)
+###### [reader](a04c) `40ants-lake/configs/install-config:on-update-func` (install-config) (:on-update-func = nil)
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3ATARGET-FILENAME-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-29-29"></a>
 
-###### [reader](ef51) `40ants-lake/configs/install-config:target-filename` (install-config) (:target-filename)
+###### [reader](c0cc) `40ants-lake/configs/install-config:target-filename` (install-config) (:target-filename)
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3ATEMPLATE-FILENAME-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-29-29"></a>
 
-###### [reader](b446) `40ants-lake/configs/install-config:template-filename` (install-config) (:template-filename)
+###### [reader](5fd4) `40ants-lake/configs/install-config:template-filename` (install-config) (:template-filename)
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3ATEMPLATE-PARTIALS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-29-29"></a>
 
-###### [reader](9f75) `40ants-lake/configs/install-config:template-partials` (install-config) (:partials)
+###### [reader](10b3) `40ants-lake/configs/install-config:template-partials` (install-config) (:partials)
 
 Alist of where key is a string name of the partial and value is a template filename.
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3ATEMPLATE-VARS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-29-29"></a>
 
-###### [reader](46ed) `40ants-lake/configs/install-config:template-vars` (install-config) (:template-vars)
+###### [reader](c959) `40ants-lake/configs/install-config:template-vars` (install-config) (:template-vars)
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -770,7 +770,7 @@ Alist of where key is a string name of the partial and value is a template filen
 
 <a id="x-2840ANTS-LAKE-2FCONFIGS-2FINSTALL-CONFIG-3AINSTALL-CONFIG-20FUNCTION-29"></a>
 
-##### [function](1337) `40ants-lake/configs/install-config:install-config` template-name target-filename &rest template-vars &key check-func on-update-func partials (chmod \*default-chmod\*) chown &allow-other-keys
+##### [function](ed52) `40ants-lake/configs/install-config:install-config` template-name target-filename &rest template-vars &key check-func on-update-func partials (chmod \*default-chmod\*) chown &allow-other-keys
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FENV-VAL-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -778,7 +778,7 @@ Alist of where key is a string name of the partial and value is a template filen
 
 <a id="x-28-23A-28-2819-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FENV-VAL-22-29-20PACKAGE-29"></a>
 
-#### [package](ab0e) `40ants-lake/env-val`
+#### [package](96a4) `40ants-lake/env-val`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FENV-VAL-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -790,17 +790,17 @@ Alist of where key is a string name of the partial and value is a template filen
 
 <a id="x-2840ANTS-LAKE-2FENV-VAL-3AENV-VAL-20CLASS-29"></a>
 
-###### [class](6bab) `40ants-lake/env-val:env-val` ()
+###### [class](4477) `40ants-lake/env-val:env-val` ()
 
 **Readers**
 
 <a id="x-2840ANTS-LAKE-2FENV-VAL-3ADEV-VALUE-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FENV-VAL-3AENV-VAL-29-29"></a>
 
-###### [reader](8f97) `40ants-lake/env-val:dev-value` (env-val) (:dev = nil)
+###### [reader](3995) `40ants-lake/env-val:dev-value` (env-val) (:dev = nil)
 
 <a id="x-2840ANTS-LAKE-2FENV-VAL-3APROD-VALUE-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FENV-VAL-3AENV-VAL-29-29"></a>
 
-###### [reader](7ae8) `40ants-lake/env-val:prod-value` (env-val) (:prod = nil)
+###### [reader](8c98) `40ants-lake/env-val:prod-value` (env-val) (:prod = nil)
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FENV-VAL-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -808,11 +808,11 @@ Alist of where key is a string name of the partial and value is a template filen
 
 <a id="x-2840ANTS-LAKE-2FENV-VAL-3AENV-VAL-20FUNCTION-29"></a>
 
-##### [function](96c4) `40ants-lake/env-val:env-val` &key prod dev
+##### [function](6623) `40ants-lake/env-val:env-val` &key prod dev
 
 <a id="x-2840ANTS-LAKE-2FENV-VAL-3ARESOLVE-ENV-VALUE-20FUNCTION-29"></a>
 
-##### [function](8b22) `40ants-lake/env-val:resolve-env-value` value &key (env \*current-environment\*)
+##### [function](ad97) `40ants-lake/env-val:resolve-env-value` value &key (env \*current-environment\*)
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FENVIRONMENT-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -820,7 +820,7 @@ Alist of where key is a string name of the partial and value is a template filen
 
 <a id="x-28-23A-28-2823-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FENVIRONMENT-22-29-20PACKAGE-29"></a>
 
-#### [package](a166) `40ants-lake/environment`
+#### [package](5b43) `40ants-lake/environment`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FENVIRONMENT-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -828,19 +828,19 @@ Alist of where key is a string name of the partial and value is a template filen
 
 <a id="x-2840ANTS-LAKE-2FENVIRONMENT-3AADD-DEV-SUFFIX-IF-NEEDED-20FUNCTION-29"></a>
 
-##### [function](186f) `40ants-lake/environment:add-dev-suffix-if-needed` string &key (delimiter "-")
+##### [function](cbbc) `40ants-lake/environment:add-dev-suffix-if-needed` string &key (delimiter "-")
 
 <a id="x-2840ANTS-LAKE-2FENVIRONMENT-3AADD-PROD-SUFFIX-IF-NEEDED-20FUNCTION-29"></a>
 
-##### [function](acfb) `40ants-lake/environment:add-prod-suffix-if-needed` string &key (delimiter "-")
+##### [function](8db5) `40ants-lake/environment:add-prod-suffix-if-needed` string &key (delimiter "-")
 
 <a id="x-2840ANTS-LAKE-2FENVIRONMENT-3AASSERT-VALID-ENVIRONMENT-20FUNCTION-29"></a>
 
-##### [function](a64e) `40ants-lake/environment:assert-valid-environment` env
+##### [function](c5ff) `40ants-lake/environment:assert-valid-environment` env
 
 <a id="x-2840ANTS-LAKE-2FENVIRONMENT-3ALOAD-ENV-FILE-20FUNCTION-29"></a>
 
-##### [function](30f1) `40ants-lake/environment:load-env-file`
+##### [function](600d) `40ants-lake/environment:load-env-file`
 
 Loads .env file with lines like:
 
@@ -854,7 +854,7 @@ PORT=100500
 
 <a id="x-2840ANTS-LAKE-2FENVIRONMENT-3AWITH-ENVIRONMENT-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](1e92) `40ants-lake/environment:with-environment` (environment) &body body
+##### [macro](7db9) `40ants-lake/environment:with-environment` (environment) &body body
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FERRORS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -862,7 +862,7 @@ PORT=100500
 
 <a id="x-28-23A-28-2818-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FERRORS-22-29-20PACKAGE-29"></a>
 
-#### [package](3494) `40ants-lake/errors`
+#### [package](731c) `40ants-lake/errors`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FERRORS-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -874,13 +874,13 @@ PORT=100500
 
 <a id="x-2840ANTS-LAKE-2FERRORS-3ALAKE-ERROR-20CONDITION-29"></a>
 
-###### [condition](3063) `40ants-lake/errors:lake-error` (error)
+###### [condition](db77) `40ants-lake/errors:lake-error` (error)
 
 **Readers**
 
 <a id="x-2840ANTS-LAKE-2FERRORS-3ALAKE-ERROR-MESSAGE-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FERRORS-3ALAKE-ERROR-29-29"></a>
 
-###### [reader](3063) `40ants-lake/errors:lake-error-message` (lake-error) (:message)
+###### [reader](db77) `40ants-lake/errors:lake-error-message` (lake-error) (:message)
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FERRORS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -888,7 +888,7 @@ PORT=100500
 
 <a id="x-2840ANTS-LAKE-2FERRORS-3ALAKE-ERROR-20FUNCTION-29"></a>
 
-##### [function](d34e) `40ants-lake/errors:lake-error` message &rest args
+##### [function](e2f2) `40ants-lake/errors:lake-error` message &rest args
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FINSTALLATION-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -896,7 +896,7 @@ PORT=100500
 
 <a id="x-28-23A-28-2824-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FINSTALLATION-22-29-20PACKAGE-29"></a>
 
-#### [package](429b) `40ants-lake/installation`
+#### [package](9caf) `40ants-lake/installation`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FINSTALLATION-3FGenerics-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -904,7 +904,7 @@ PORT=100500
 
 <a id="x-2840ANTS-LAKE-2FINSTALLATION-3ACOLLECT-INSTALLATION-STEPS-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](123c) `40ants-lake/installation:collect-installation-steps` app-or-component
+##### [generic-function](2366) `40ants-lake/installation:collect-installation-steps` app-or-component
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-4040ANTS-LAKE-2FPERFORM-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -912,7 +912,7 @@ PORT=100500
 
 <a id="x-28-23A-28-2819-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FPERFORM-22-29-20PACKAGE-29"></a>
 
-#### [package](0782) `40ants-lake/perform`
+#### [package](11d6) `40ants-lake/perform`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FPERFORM-3FGenerics-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -920,7 +920,7 @@ PORT=100500
 
 <a id="x-2840ANTS-LAKE-2FPERFORM-3APERFORM-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](0602) `40ants-lake/perform:perform` step
+##### [generic-function](a668) `40ants-lake/perform:perform` step
 
 Performs an installation step.
 
@@ -930,7 +930,7 @@ Performs an installation step.
 
 <a id="x-28-23A-28-2819-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FRELEASE-22-29-20PACKAGE-29"></a>
 
-#### [package](fc8f) `40ants-lake/release`
+#### [package](6690) `40ants-lake/release`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FRELEASE-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -938,17 +938,17 @@ Performs an installation step.
 
 <a id="x-2840ANTS-LAKE-2FRELEASE-3AMAKE-STAGING-20FUNCTION-29"></a>
 
-##### [function](e0e1) `40ants-lake/release:make-staging` app root
+##### [function](f6e7) `40ants-lake/release:make-staging` app root
 
 Assemble a temporary staging directory for a release of `APP`.
 
 The staging directory is created atomically and is unique across processes;
 concurrent deployments cannot collide or reuse a failed attempt's directory.
 
-Each element of [`app-release-paths`][6f2c] is a (staging-path . source-path) pair:
+Each element of [`app-release-paths`][7752] is a (staging-path . source-path) pair:
 directories are copied recursively, files create their parent directories.
 `REVISION` receives `git rev-parse HEAD` of `ROOT`; each element of
-[`app-extra-revisions`][0081], a (filename . git-path) pair, receives `git rev-parse
+[`app-extra-revisions`][f059], a (filename . git-path) pair, receives `git rev-parse
 HEAD` of the nested repository at `ROOT`/git-path.
 
 The caller is responsible for removing the returned directory after the
@@ -960,7 +960,7 @@ release has been installed.
 
 <a id="x-28-23A-28-2817-29-20BASE-CHAR-20-2E-20-2240ANTS-LAKE-2FUTILS-22-29-20PACKAGE-29"></a>
 
-#### [package](3f60) `40ants-lake/utils`
+#### [package](5e1f) `40ants-lake/utils`
 
 <a id="x-2840ANTS-LAKE-DOCS-2FINDEX-3A-3A-7C-4040ANTS-LAKE-2FUTILS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -968,114 +968,119 @@ release has been installed.
 
 <a id="x-2840ANTS-LAKE-2FUTILS-3AALIAS-20FUNCTION-29"></a>
 
-##### [function](6610) `40ants-lake/utils:alias` alias-name existing-task-name
+##### [function](3160) `40ants-lake/utils:alias` alias-name existing-task-name
 
 <a id="x-2840ANTS-LAKE-2FUTILS-3AGET-FULL-PATH-20FUNCTION-29"></a>
 
-##### [function](141d) `40ants-lake/utils:get-full-path` path
+##### [function](868d) `40ants-lake/utils:get-full-path` path
 
 For a path like `deploy/$HOME/.local/share/systemd/user/app.service`
 returns `deploy/.local/share/systemd/user/app.service`
 
 <a id="x-2840ANTS-LAKE-2FUTILS-3AGET-SYSTEM-PATH-20FUNCTION-29"></a>
 
-##### [function](e5cb) `40ants-lake/utils:get-system-path` PATH &KEY (PREFIX "deploy/")
+##### [function](b339) `40ants-lake/utils:get-system-path` PATH &KEY (PREFIX "deploy/")
 
 For a path like `deploy/$HOME/.local/share/systemd/user/app.service`
 returns `/home/username/.local/share/systemd/user/app.service`
 
 <a id="x-2840ANTS-LAKE-2FUTILS-3ANAMESTRING-IF-EXISTS-20FUNCTION-29"></a>
 
-##### [function](116d) `40ants-lake/utils:namestring-if-exists` path-or-string
+##### [function](7845) `40ants-lake/utils:namestring-if-exists` path-or-string
 
 
 [5e55]: https://40ants.com/40ants-lake/
+[f059]: https://40ants.com/40ants-lake/#x-2840ANTS-LAKE-2FAPP-3AAPP-EXTRA-REVISIONS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29
+[529f]: https://40ants.com/40ants-lake/#x-2840ANTS-LAKE-2FAPP-3AAPP-HEALTH-CHECK-URL-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29
+[7752]: https://40ants.com/40ants-lake/#x-2840ANTS-LAKE-2FAPP-3AAPP-RELEASE-PATHS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29
+[cd1c]: https://40ants.com/40ants-lake/#x-2840ANTS-LAKE-2FERRORS-3ALAKE-ERROR-20CONDITION-29
+[d96a]: https://40ants.com/40ants-lake/#x-2840ANTS-LAKE-2FERRORS-3ALAKE-ERROR-20FUNCTION-29
 [4665]: https://github.com/40ants/40ants-lake
 [822c]: https://github.com/40ants/40ants-lake/actions
-[2804]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L1
-[9ccc]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L137
-[0337]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L149
-[b92a]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L160
-[1674]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L166
-[3828]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L192
-[9669]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L208
-[b940]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L217
-[405f]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L222
-[7e0f]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L39
-[10d8]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L40
-[f1b0]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L43
-[cfce]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L46
-[86fc]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L50
-[aa4a]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L54
-[e344]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L58
-[37f7]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L62
-[34df]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L66
-[14fa]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L70
-[abf8]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L76
-[6b6e]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/app.lisp#L98
-[b0c1]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/db.lisp#L1
-[4605]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/db.lisp#L112
-[e8f5]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/db.lisp#L32
-[3180]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/db.lisp#L92
-[97ae]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/to-prod.lisp#L1
-[a16c]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/to-prod.lisp#L134
-[a707]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/to-prod.lisp#L41
-[e798]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/to-prod.lisp#L54
-[5cb8]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/commands/to-prod.lisp#L68
-[14ff]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/daemon.lisp#L1
-[5f1a]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/daemon.lisp#L32
-[3cba]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/daemon.lisp#L33
-[e110]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/daemon.lisp#L37
-[2fbc]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/daemon.lisp#L43
-[d712]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/daemon.lisp#L94
-[5eaf]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L1
-[ebf3]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L112
-[9b60]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L113
-[26ad]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L119
-[9eb9]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L120
-[1b27]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L125
-[757f]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L132
-[d48c]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L34
-[0fb8]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L35
-[3f94]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L38
-[24ec]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/component/webservice.lisp#L43
-[2e98]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L1
-[bc1f]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L33
-[b446]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L34
-[ef51]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L37
-[46ed]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L40
-[9f75]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L43
-[0526]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L47
-[07b0]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L51
-[2b48]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L56
-[1c51]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L60
-[1337]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/configs/install-config.lisp#L93
-[ab0e]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/env-val.lisp#L1
-[6bab]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/env-val.lisp#L13
-[7ae8]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/env-val.lisp#L14
-[8f97]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/env-val.lisp#L17
-[96c4]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/env-val.lisp#L22
-[8b22]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/env-val.lisp#L35
-[a166]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/environment.lisp#L1
-[a64e]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/environment.lisp#L23
-[1e92]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/environment.lisp#L29
-[186f]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/environment.lisp#L36
-[acfb]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/environment.lisp#L47
-[30f1]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/environment.lisp#L59
-[3494]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/errors.lisp#L1
-[3063]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/errors.lisp#L10
-[d34e]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/errors.lisp#L18
-[429b]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/installation.lisp#L1
-[123c]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/installation.lisp#L7
-[0782]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/perform.lisp#L1
-[0602]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/perform.lisp#L7
-[fc8f]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/release.lisp#L1
-[e0e1]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/release.lisp#L73
-[3f60]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/utils.lisp#L1
-[6610]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/utils.lisp#L16
-[141d]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/utils.lisp#L38
-[e5cb]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/utils.lisp#L50
-[116d]: https://github.com/40ants/40ants-lake/blob/ef7d7e0b874941a7e3a36565f35788ef3a74a9f0/src/utils.lisp#L74
+[f027]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L1
+[23a0]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L137
+[5845]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L149
+[2b9d]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L160
+[d039]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L166
+[1b73]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L192
+[b42e]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L208
+[8dc8]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L217
+[9542]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L222
+[871f]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L39
+[1eb2]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L40
+[813e]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L43
+[c775]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L46
+[7f3c]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L50
+[ab83]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L54
+[3757]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L58
+[8648]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L62
+[5f19]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L66
+[f602]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L70
+[2323]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L76
+[59b7]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/app.lisp#L98
+[8001]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/db.lisp#L1
+[31eb]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/db.lisp#L112
+[e4f4]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/db.lisp#L32
+[fe4b]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/db.lisp#L92
+[74c7]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/to-prod.lisp#L1
+[268c]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/to-prod.lisp#L134
+[be21]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/to-prod.lisp#L41
+[60a7]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/to-prod.lisp#L54
+[b8e9]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/commands/to-prod.lisp#L68
+[f113]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/daemon.lisp#L1
+[f4c1]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/daemon.lisp#L32
+[7613]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/daemon.lisp#L33
+[adb8]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/daemon.lisp#L37
+[4c85]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/daemon.lisp#L43
+[a3b9]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/daemon.lisp#L94
+[502e]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L1
+[57a0]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L112
+[baca]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L113
+[97b5]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L119
+[7f6e]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L120
+[a743]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L125
+[5f97]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L132
+[de49]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L34
+[6127]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L35
+[f8db]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L38
+[9bae]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/component/webservice.lisp#L43
+[60ac]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L1
+[419b]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L33
+[5fd4]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L34
+[c0cc]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L37
+[c959]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L40
+[10b3]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L43
+[54e2]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L47
+[38b2]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L51
+[2664]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L56
+[a04c]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L60
+[ed52]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/configs/install-config.lisp#L93
+[96a4]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/env-val.lisp#L1
+[4477]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/env-val.lisp#L13
+[8c98]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/env-val.lisp#L14
+[3995]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/env-val.lisp#L17
+[6623]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/env-val.lisp#L22
+[ad97]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/env-val.lisp#L35
+[5b43]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/environment.lisp#L1
+[c5ff]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/environment.lisp#L23
+[7db9]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/environment.lisp#L29
+[cbbc]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/environment.lisp#L36
+[8db5]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/environment.lisp#L47
+[600d]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/environment.lisp#L59
+[731c]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/errors.lisp#L1
+[db77]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/errors.lisp#L10
+[e2f2]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/errors.lisp#L18
+[9caf]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/installation.lisp#L1
+[2366]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/installation.lisp#L7
+[11d6]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/perform.lisp#L1
+[a668]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/perform.lisp#L7
+[6690]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/release.lisp#L1
+[f6e7]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/release.lisp#L73
+[5e1f]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/utils.lisp#L1
+[3160]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/utils.lisp#L16
+[868d]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/utils.lisp#L38
+[b339]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/utils.lisp#L50
+[7845]: https://github.com/40ants/40ants-lake/blob/0659fb472eeb8206eb0e111e3c9c4520fd54b5c2/src/utils.lisp#L74
 [43ae]: https://github.com/40ants/40ants-lake/issues
 [8236]: https://quickdocs.org/alexandria
 [c15d]: https://quickdocs.org/asdf
@@ -1085,11 +1090,6 @@ returns `/home/username/.local/share/systemd/user/app.service`
 [e72d]: https://quickdocs.org/lparallel
 [c41d]: https://quickdocs.org/serapeum
 [ef7f]: https://quickdocs.org/str
-[0081]: index.html#x-2840ANTS-LAKE-2FAPP-3AAPP-EXTRA-REVISIONS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29
-[f5e3]: index.html#x-2840ANTS-LAKE-2FAPP-3AAPP-HEALTH-CHECK-URL-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29
-[6f2c]: index.html#x-2840ANTS-LAKE-2FAPP-3AAPP-RELEASE-PATHS-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-2040ANTS-LAKE-2FAPP-3AAPP-29-29
-[460f]: index.html#x-2840ANTS-LAKE-2FERRORS-3ALAKE-ERROR-20CONDITION-29
-[6605]: index.html#x-2840ANTS-LAKE-2FERRORS-3ALAKE-ERROR-20FUNCTION-29
 
 * * *
 ###### [generated by [40ANTS-DOC](https://40ants.com/doc/)]
