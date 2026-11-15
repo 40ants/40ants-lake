@@ -1,0 +1,7 @@
+name: asd-ste100
+version: 9c35169
+description: Rewrite ambiguous English into ASD-STE100 Simplified Technical English
+author: danyuchn
+license: MIT
+repository: https://github.com/danyuchn/asd-ste100-skill
+type: hybrid

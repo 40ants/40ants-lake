@@ -46,6 +46,7 @@
       (ok (equal value "secret 42")))
     (multiple-value-bind (key value)
         (%parse-env-line "DB_PASSWORD='secret 42'")
+      (ok (equal key "DB_PASSWORD"))
       (ok (equal value "secret 42")))))
 
 
