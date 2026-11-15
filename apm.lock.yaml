@@ -1,0 +1,648 @@
+lockfile_version: '1'
+apm_version: 0.31.0
+dependencies:
+- repo_url: 40ants/ai
+  name: common-lisp-skills
+  host: github.com
+  resolved_commit: ff93ff7b466b4676ff016cce8a8f360fc8cc10a9
+  version: 0.1.1
+  virtual_path: plugins/common-lisp-skills
+  is_virtual: true
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/avoiding-common-lisp-pitfalls
+  - .agents/skills/avoiding-common-lisp-pitfalls/SKILL.md
+  - .agents/skills/avoiding-common-lisp-pitfalls/check-paren-balance.lisp
+  - .agents/skills/clearing-asdf-fasl-cache
+  - .agents/skills/clearing-asdf-fasl-cache/SKILL.md
+  - .agents/skills/clearing-asdf-fasl-cache/clear-fasl-cache.sh
+  - .agents/skills/defining-clos-classes
+  - .agents/skills/defining-clos-classes/SKILL.md
+  - .agents/skills/handling-json-in-common-lisp
+  - .agents/skills/handling-json-in-common-lisp/SKILL.md
+  - .agents/skills/lint-common-lisp
+  - .agents/skills/lint-common-lisp/SKILL.md
+  - .agents/skills/lint-common-lisp/agents/openai.yaml
+  - .agents/skills/logging-with-log4cl
+  - .agents/skills/logging-with-log4cl/SKILL.md
+  - .agents/skills/testing-with-rove
+  - .agents/skills/testing-with-rove/SKILL.md
+  - .agents/skills/using-common-lisp-repl
+  - .agents/skills/using-common-lisp-repl/SKILL.md
+  - .agents/skills/writing-40ants-doc-documentation
+  - .agents/skills/writing-40ants-doc-documentation/SKILL.md
+  - .agents/skills/writing-common-lisp
+  - .agents/skills/writing-common-lisp/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/avoiding-common-lisp-pitfalls/SKILL.md: sha256:07e2603f068d288db277134c50e2298fbc80ea90e208d675c8b6643c2132123e
+    .agents/skills/avoiding-common-lisp-pitfalls/check-paren-balance.lisp: sha256:fc0037a2bc9bf48a4a339042ba6f0d47235efa4815288502ac4babe380595069
+    .agents/skills/clearing-asdf-fasl-cache/SKILL.md: sha256:2bb15a1fa0edcaa71499272eaf96dc54d780a8d4ccdd680cf1e1c949ce20d996
+    .agents/skills/clearing-asdf-fasl-cache/clear-fasl-cache.sh: sha256:5a6574466bc4521d490619cf31533b2acad70bbaadb5fffb8298cb4ef6c0b8dc
+    .agents/skills/defining-clos-classes/SKILL.md: sha256:a1aad29d97afe52542df293eaf2ad1ffcadf0fc735c86183a40515acaf2f1405
+    .agents/skills/handling-json-in-common-lisp/SKILL.md: sha256:1e37c331266379c08188156022e9795ff1804c865a479f4fa6301024a574033d
+    .agents/skills/lint-common-lisp/SKILL.md: sha256:5d55701fc4797d277c8bf649b198177d1202c381f5fd4580a952096809c148bb
+    .agents/skills/lint-common-lisp/agents/openai.yaml: sha256:363b9316ce76bd943d667c8d4643beff40b708cd1887a6976fb5d768e5625abf
+    .agents/skills/logging-with-log4cl/SKILL.md: sha256:eeb92fd4105be0b20e74532e2cfd1d267541d0c43124753d4e2d7e727b61b9d3
+    .agents/skills/testing-with-rove/SKILL.md: sha256:50994ad2504ed20b9fa16c7999d14a35a9cbe0ca61ca506f9c37e06c0fe2d4fe
+    .agents/skills/using-common-lisp-repl/SKILL.md: sha256:f8551eef9e734b16b64857c1596878a5c07b21c0f882a4a3dd33d11327c62080
+    .agents/skills/writing-40ants-doc-documentation/SKILL.md: sha256:7f600ead203f1d08b06709b5cc6a39cd79b3d36248e89cfd88e81f89aa02877d
+    .agents/skills/writing-common-lisp/SKILL.md: sha256:6f8d30f1637b098e5b49bb5f4a88ac155b016a5583b736c915f87b27edcb68fd
+  content_hash: sha256:aa666cedef2dcad70904beda7a42cb47db1b382efaf1fe2e1421413e1c83cd38
+  declared_license: MIT
+- repo_url: dab512/atomic-spec
+  name: atomic-spec
+  host: github.com
+  resolved_commit: 594a44f0f8c8916faf96a3c13e3247e83b7ae2d3
+  version: 0.1.0
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/atomic-spec-orchestrator
+  - .agents/skills/atomic-spec-orchestrator/README.md
+  - .agents/skills/atomic-spec-orchestrator/SKILL.md
+  - .agents/skills/atomic-spec-orchestrator/assets/atom-template.spec.md
+  - .agents/skills/atomic-spec-orchestrator/references/analyst.md
+  - .agents/skills/atomic-spec-orchestrator/references/developer.md
+  - .agents/skills/atomic-spec-orchestrator/references/tester.md
+  deployed_file_hashes:
+    .agents/skills/atomic-spec-orchestrator/README.md: sha256:35dd28f3c6bdbe273c39bf9c86c173ccf54a264683cad00fa5a5be36823c17bd
+    .agents/skills/atomic-spec-orchestrator/SKILL.md: sha256:ee9cc0f49d8d7d6e3cf67c59fe2d7832d3200b030cb745ed2080c6310373daba
+    .agents/skills/atomic-spec-orchestrator/assets/atom-template.spec.md: sha256:420e739dda91d42803f5df3efeb431fc1493fef391bac85e907449ddc42d337e
+    .agents/skills/atomic-spec-orchestrator/references/analyst.md: sha256:34b24ec89a10bae26b2ab037fe0b8fbd5352114eb4944000a3a0a5f02ee47d1b
+    .agents/skills/atomic-spec-orchestrator/references/developer.md: sha256:51cf4e0308ff4ff483565c5bcd7cce093460304286cb4069bd8e73e13e7b0a92
+    .agents/skills/atomic-spec-orchestrator/references/tester.md: sha256:1d82e54b974ba0839a04a8d9b95d57daf75fb710df67df9988431318676ca065
+  content_hash: sha256:52aa3399efea62b0f032e73519117eebe2d649bc5bd4d13f13295133c2434a68
+  declared_license: MIT
+- repo_url: danyuchn/asd-ste100-skill
+  name: asd-ste100
+  host: github.com
+  resolved_commit: 9c351694439ea1171f36c65b91ba661e7a0499c8
+  version: 9c35169
+  package_type: hybrid
+  deployed_files:
+  - .agents/skills/asd-ste100-skill
+  - .agents/skills/asd-ste100-skill/.claude-plugin/marketplace.json
+  - .agents/skills/asd-ste100-skill/.claude-plugin/plugin.json
+  - .agents/skills/asd-ste100-skill/LICENSE
+  - .agents/skills/asd-ste100-skill/README.md
+  - .agents/skills/asd-ste100-skill/SKILL.md
+  - .agents/skills/asd-ste100-skill/apm.yml
+  - .agents/skills/asd-ste100-skill/examples/before-after.md
+  - .agents/skills/asd-ste100-skill/examples/linter-edge-cases.md
+  - .agents/skills/asd-ste100-skill/references/writing-rules.md
+  - .agents/skills/asd-ste100-skill/scripts/ste-lint.py
+  deployed_file_hashes:
+    .agents/skills/asd-ste100-skill/.claude-plugin/marketplace.json: sha256:de39ad813f555700e7447b0abc4a31bda896f2bdd730919b7af4aba16921cd9c
+    .agents/skills/asd-ste100-skill/.claude-plugin/plugin.json: sha256:7e893bca300f1fa0a322ce105259fb7e50280627e99441825d2c0bae88196cae
+    .agents/skills/asd-ste100-skill/LICENSE: sha256:d3c674e8592076c9021a59b55177adbcba6fd7e1710082becb922522b22ec672
+    .agents/skills/asd-ste100-skill/README.md: sha256:3b1e271caf0f75269b72fc73ff041267e7fc5981c637c105ab61b9b3731cbf51
+    .agents/skills/asd-ste100-skill/SKILL.md: sha256:fa2c62cd4ba6e07a1ae1efd0e63e2837e94f8365e3450782f5ef0e9488eae33e
+    .agents/skills/asd-ste100-skill/apm.yml: sha256:c7183560d446afe3a9a2129795d236cefb01eee709a8553af99fe93f18057e2e
+    .agents/skills/asd-ste100-skill/examples/before-after.md: sha256:78cb9afd26000c6f76bda5669e331d6539db499d102a3afabdfb1d21cd903128
+    .agents/skills/asd-ste100-skill/examples/linter-edge-cases.md: sha256:b6cc08af876014453b0c72d26ee4bfaeed1e9a154b5046947392752911ce1774
+    .agents/skills/asd-ste100-skill/references/writing-rules.md: sha256:4b92c86bf803f9f54e069767d34dc7356fbb95fb52a3f28476093917c608c102
+    .agents/skills/asd-ste100-skill/scripts/ste-lint.py: sha256:a9d8a76a0e5dd7f39aa4972e6fae490fd656ff218624a4a9fc9c5fcb2fcb2240
+  content_hash: sha256:cdd70e96d4f7c91da43adbc31a6259a0039af1a5d76ce210b932c8d14ef2fda4
+  declared_license: MIT
+- repo_url: loadkpi/simplified-technical-russian-skill
+  name: simplified-technical-russian
+  host: github.com
+  resolved_commit: 6994651c03178d02431fe7f692fdb3c94a5ba825
+  version: unknown
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/simplified-technical-russian-skill
+  - .agents/skills/simplified-technical-russian-skill/.gitignore
+  - .agents/skills/simplified-technical-russian-skill/AGENTS.md
+  - .agents/skills/simplified-technical-russian-skill/CHANGELOG.md
+  - .agents/skills/simplified-technical-russian-skill/LICENSE
+  - .agents/skills/simplified-technical-russian-skill/README.md
+  - .agents/skills/simplified-technical-russian-skill/SKILL.md
+  - .agents/skills/simplified-technical-russian-skill/examples/before-after.md
+  - .agents/skills/simplified-technical-russian-skill/references/checklist.md
+  - .agents/skills/simplified-technical-russian-skill/references/code-comments.md
+  - .agents/skills/simplified-technical-russian-skill/references/glossary.example.json
+  - .agents/skills/simplified-technical-russian-skill/references/gost-58049-utr.md
+  - .agents/skills/simplified-technical-russian-skill/references/lexicon.md
+  - .agents/skills/simplified-technical-russian-skill/scripts/utr_lint.py
+  - .agents/skills/simplified-technical-russian-skill/tests/test_utr_lint.py
+  deployed_file_hashes:
+    .agents/skills/simplified-technical-russian-skill/.gitignore: sha256:e5dd7ed9479dc86a75edeee5f1a3679c4f1f9946668a0551d56002c1927291c4
+    .agents/skills/simplified-technical-russian-skill/AGENTS.md: sha256:d7873e036dd5686d9a0e8c0fb037d5054ee13a5ca663e5433f169d4f8a8308f7
+    .agents/skills/simplified-technical-russian-skill/CHANGELOG.md: sha256:198b3db6b2c568e8eb99a4646572b3fa7838965893ca35e88e98de40be7d6409
+    .agents/skills/simplified-technical-russian-skill/LICENSE: sha256:83244415b1b912e9f128b203d48ec0719412e9b8d1123e663a26df74663ebe36
+    .agents/skills/simplified-technical-russian-skill/README.md: sha256:27a19337308fb8a6f2630be54517e2b1ccb9fbe3669a5e2a730722adeffd2be9
+    .agents/skills/simplified-technical-russian-skill/SKILL.md: sha256:7fe75faefd5e77dce5c441d81f3bd9406e1a8d5d77c9bec0eca73be6342c35c5
+    .agents/skills/simplified-technical-russian-skill/examples/before-after.md: sha256:dff6b6ee3f58db4c7ab2c6a7f5be6afbc62b994f95e8bda3cdfcd29a6d5df7c3
+    .agents/skills/simplified-technical-russian-skill/references/checklist.md: sha256:04d0fcc43f59ae0d34baf3906a8903400973d973ac552f337671e5f6437bd604
+    .agents/skills/simplified-technical-russian-skill/references/code-comments.md: sha256:2ec3dd832622c5d257e2a874a2f415261b576815dd3a68b26d630ce48773d49d
+    .agents/skills/simplified-technical-russian-skill/references/glossary.example.json: sha256:f5a2e4f3436882ab8fe07e4a58023f0e4b1ecbefad12181ce226373a51424622
+    .agents/skills/simplified-technical-russian-skill/references/gost-58049-utr.md: sha256:4a71689442d1df31a17c42bd03b7c0ef33641f5862e8e0698f066d7022ec6bae
+    .agents/skills/simplified-technical-russian-skill/references/lexicon.md: sha256:1e30f127261968691de83414f62796f1fe23dfbbb986882fb3b345eec291919a
+    .agents/skills/simplified-technical-russian-skill/scripts/utr_lint.py: sha256:a0dd7791c40fc4806a6e3777bbfb16bd96ef1215866dcf4cdc932e098a84d49d
+    .agents/skills/simplified-technical-russian-skill/tests/test_utr_lint.py: sha256:1024819ca9f722a936fe4f3bcb044d2f4eddd5a9d0c0655ff998f184fddf2a14
+  content_hash: sha256:c3a5955ee25a71271384fe8943e67d8e0edc9ebe6e0a9cc7c0f90f2dc8646ae2
+deployments:
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/.claude-plugin/marketplace.json
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:de39ad813f555700e7447b0abc4a31bda896f2bdd730919b7af4aba16921cd9c
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/.claude-plugin/plugin.json
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:7e893bca300f1fa0a322ce105259fb7e50280627e99441825d2c0bae88196cae
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/LICENSE
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:d3c674e8592076c9021a59b55177adbcba6fd7e1710082becb922522b22ec672
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/README.md
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:3b1e271caf0f75269b72fc73ff041267e7fc5981c637c105ab61b9b3731cbf51
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:fa2c62cd4ba6e07a1ae1efd0e63e2837e94f8365e3450782f5ef0e9488eae33e
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/apm.yml
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:c7183560d446afe3a9a2129795d236cefb01eee709a8553af99fe93f18057e2e
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/examples/before-after.md
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:78cb9afd26000c6f76bda5669e331d6539db499d102a3afabdfb1d21cd903128
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/examples/linter-edge-cases.md
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:b6cc08af876014453b0c72d26ee4bfaeed1e9a154b5046947392752911ce1774
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/references/writing-rules.md
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:4b92c86bf803f9f54e069767d34dc7356fbb95fb52a3f28476093917c608c102
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/asd-ste100-skill/scripts/ste-lint.py
+  runtime: null
+  scope: project
+  owners:
+  - danyuchn/asd-ste100-skill
+  active_owner: danyuchn/asd-ste100-skill
+  content_hash: sha256:a9d8a76a0e5dd7f39aa4972e6fae490fd656ff218624a4a9fc9c5fcb2fcb2240
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/atomic-spec-orchestrator
+  runtime: null
+  scope: project
+  owners:
+  - dab512/atomic-spec
+  active_owner: dab512/atomic-spec
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/atomic-spec-orchestrator/README.md
+  runtime: null
+  scope: project
+  owners:
+  - dab512/atomic-spec
+  active_owner: dab512/atomic-spec
+  content_hash: sha256:35dd28f3c6bdbe273c39bf9c86c173ccf54a264683cad00fa5a5be36823c17bd
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/atomic-spec-orchestrator/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - dab512/atomic-spec
+  active_owner: dab512/atomic-spec
+  content_hash: sha256:ee9cc0f49d8d7d6e3cf67c59fe2d7832d3200b030cb745ed2080c6310373daba
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/atomic-spec-orchestrator/assets/atom-template.spec.md
+  runtime: null
+  scope: project
+  owners:
+  - dab512/atomic-spec
+  active_owner: dab512/atomic-spec
+  content_hash: sha256:420e739dda91d42803f5df3efeb431fc1493fef391bac85e907449ddc42d337e
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/atomic-spec-orchestrator/references/analyst.md
+  runtime: null
+  scope: project
+  owners:
+  - dab512/atomic-spec
+  active_owner: dab512/atomic-spec
+  content_hash: sha256:34b24ec89a10bae26b2ab037fe0b8fbd5352114eb4944000a3a0a5f02ee47d1b
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/atomic-spec-orchestrator/references/developer.md
+  runtime: null
+  scope: project
+  owners:
+  - dab512/atomic-spec
+  active_owner: dab512/atomic-spec
+  content_hash: sha256:51cf4e0308ff4ff483565c5bcd7cce093460304286cb4069bd8e73e13e7b0a92
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/atomic-spec-orchestrator/references/tester.md
+  runtime: null
+  scope: project
+  owners:
+  - dab512/atomic-spec
+  active_owner: dab512/atomic-spec
+  content_hash: sha256:1d82e54b974ba0839a04a8d9b95d57daf75fb710df67df9988431318676ca065
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/avoiding-common-lisp-pitfalls
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/avoiding-common-lisp-pitfalls/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:07e2603f068d288db277134c50e2298fbc80ea90e208d675c8b6643c2132123e
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/avoiding-common-lisp-pitfalls/check-paren-balance.lisp
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:fc0037a2bc9bf48a4a339042ba6f0d47235efa4815288502ac4babe380595069
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/clearing-asdf-fasl-cache
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/clearing-asdf-fasl-cache/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:2bb15a1fa0edcaa71499272eaf96dc54d780a8d4ccdd680cf1e1c949ce20d996
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/clearing-asdf-fasl-cache/clear-fasl-cache.sh
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:5a6574466bc4521d490619cf31533b2acad70bbaadb5fffb8298cb4ef6c0b8dc
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/defining-clos-classes
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/defining-clos-classes/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:a1aad29d97afe52542df293eaf2ad1ffcadf0fc735c86183a40515acaf2f1405
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/handling-json-in-common-lisp
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/handling-json-in-common-lisp/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:1e37c331266379c08188156022e9795ff1804c865a479f4fa6301024a574033d
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/lint-common-lisp
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/lint-common-lisp/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:5d55701fc4797d277c8bf649b198177d1202c381f5fd4580a952096809c148bb
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/lint-common-lisp/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:363b9316ce76bd943d667c8d4643beff40b708cd1887a6976fb5d768e5625abf
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/logging-with-log4cl
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/logging-with-log4cl/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:eeb92fd4105be0b20e74532e2cfd1d267541d0c43124753d4e2d7e727b61b9d3
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/.gitignore
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:e5dd7ed9479dc86a75edeee5f1a3679c4f1f9946668a0551d56002c1927291c4
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/AGENTS.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:d7873e036dd5686d9a0e8c0fb037d5054ee13a5ca663e5433f169d4f8a8308f7
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/CHANGELOG.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:198b3db6b2c568e8eb99a4646572b3fa7838965893ca35e88e98de40be7d6409
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/LICENSE
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:83244415b1b912e9f128b203d48ec0719412e9b8d1123e663a26df74663ebe36
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/README.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:27a19337308fb8a6f2630be54517e2b1ccb9fbe3669a5e2a730722adeffd2be9
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:7fe75faefd5e77dce5c441d81f3bd9406e1a8d5d77c9bec0eca73be6342c35c5
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/examples/before-after.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:dff6b6ee3f58db4c7ab2c6a7f5be6afbc62b994f95e8bda3cdfcd29a6d5df7c3
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/references/checklist.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:04d0fcc43f59ae0d34baf3906a8903400973d973ac552f337671e5f6437bd604
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/references/code-comments.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:2ec3dd832622c5d257e2a874a2f415261b576815dd3a68b26d630ce48773d49d
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/references/glossary.example.json
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:f5a2e4f3436882ab8fe07e4a58023f0e4b1ecbefad12181ce226373a51424622
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/references/gost-58049-utr.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:4a71689442d1df31a17c42bd03b7c0ef33641f5862e8e0698f066d7022ec6bae
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/references/lexicon.md
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:1e30f127261968691de83414f62796f1fe23dfbbb986882fb3b345eec291919a
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/scripts/utr_lint.py
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:a0dd7791c40fc4806a6e3777bbfb16bd96ef1215866dcf4cdc932e098a84d49d
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/simplified-technical-russian-skill/tests/test_utr_lint.py
+  runtime: null
+  scope: project
+  owners:
+  - loadkpi/simplified-technical-russian-skill
+  active_owner: loadkpi/simplified-technical-russian-skill
+  content_hash: sha256:1024819ca9f722a936fe4f3bcb044d2f4eddd5a9d0c0655ff998f184fddf2a14
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/testing-with-rove
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/testing-with-rove/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:50994ad2504ed20b9fa16c7999d14a35a9cbe0ca61ca506f9c37e06c0fe2d4fe
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/using-common-lisp-repl
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/using-common-lisp-repl/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:f8551eef9e734b16b64857c1596878a5c07b21c0f882a4a3dd33d11327c62080
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/writing-40ants-doc-documentation
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/writing-40ants-doc-documentation/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:7f600ead203f1d08b06709b5cc6a39cd79b3d36248e89cfd88e81f89aa02877d
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/writing-common-lisp
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/writing-common-lisp/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - 40ants/ai/plugins/common-lisp-skills
+  active_owner: 40ants/ai/plugins/common-lisp-skills
+  content_hash: sha256:6f8d30f1637b098e5b49bb5f4a88ac155b016a5583b736c915f87b27edcb68fd
